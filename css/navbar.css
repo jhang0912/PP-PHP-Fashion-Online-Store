@@ -1,0 +1,49 @@
+/* all */
+*
+{
+  font-family: 'Cinzel', serif;
+}
+/* #Navbar */
+#Navbar .navbar
+{
+  background-color: rgb(
+    25, 25, 25);
+}
+#Navbar .home
+{
+  justify-content: start;
+}
+#Navbar img
+{
+  width: 220px;
+}
+#Navbar a
+{
+  font-size: 1.25rem;
+  text-decoration: none;
+  color: white;
+}
+#Navbar .control
+{
+  justify-content: flex-end;
+}
+#Navbar .sort
+{
+  background-color: rgb(240, 240, 240);
+}
+/* #Navbar RWD */
+@media (min-width: 0px) and (max-width: 767px) {
+  #Navbar .home
+  {
+    justify-content: center;
+  }
+  #Navbar .control
+  {
+    justify-content: space-between;
+  }
+  #Navbar .control>div
+  {
+    margin-top: 1rem;
+  } 
+}
+

@@ -11,11 +11,15 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- google font -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Kanit:wght@500&display=swap" rel="stylesheet">
   <!-- fontawesome -->
   <script src="https://kit.fontawesome.com/518f89d214.js" crossorigin="anonymous"></script>
+  <!-- slick -->
+  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
   <!-- css -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/home.css">
   <!-- title -->
   <title>Fashion Online Store</title>
 </head>
@@ -59,9 +63,13 @@
 
   <div class="sort container-fluid d-none d-md-flex justify-content-center align-items-center ps-4 pe-4">
     <div class="newIn m-2 me-4"><a href="?mainSort=newIn" class="text-dark">NEW IN</a></div>
+
     <div class="collection m-2 me-4"><a href="?mainSort=collection" class="text-dark">COLLECTION</a></div>
+
     <div class="shoes m-2 me-4"><a href="?mainSort=shoes" class="text-dark">SHOES</a></div>
-    <div class="specialPrices m-2 me-4"><a href="?mainSort=specialPrices" class="text-dark">SPECIAL PRICES</a></div>
+
+    <div class="specialPrices m-2 me-4"><a href="?mainSort=specialPrices" class="text-danger">SPECIAL PRICES</a></div>
+
     <div class="joinLife m-2 me-4"><a href="?mainSort=joinLife" class="text-dark">JOIN LIFE</a></div>
   </div>
 </section>
@@ -73,6 +81,8 @@
 <section id="javaScript">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script src="js/slick.js"></script>
     <script src="js/js.js"></script>
 </section>
 </body>
