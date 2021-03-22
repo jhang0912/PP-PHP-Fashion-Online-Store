@@ -85,7 +85,7 @@
 </section>
 
 <section id="Content">
-<?php loadPages("front"); ?>
+<?php include $Front->getLoad()?>
 </section>
 
 <section id="javaScript">

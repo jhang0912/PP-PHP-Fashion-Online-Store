@@ -5,20 +5,36 @@ session_start();
 
 
 /* 讀取頁面 */
-function loadPages ($type){
-  global $page;
+$Front=new loadPages('front');
+$Backend=new loadPages('backend');
+class loadPages
+{
+  private $page;
+  private $type;
 
-  $page=(!empty($_GET["page"]))?$_GET["page"]:"home";
-
-  $pageFile="$type/".$page.".php";
-
-  if(file_exists($pageFile))
+  public function __construct($type)
   {
-    return include $pageFile;
+    $this->page=(!empty($_GET["page"]))?$_GET["page"]:"home";
+    $this->type=$type;
   }
-  else
+
+  private function load ()
   {
-    return include "$type/home.php";
+    $pageFile="$this->type/".$this->page.".php";
+
+    if(file_exists($pageFile))
+    {
+      return $pageFile;
+    }
+    else
+    {
+      return "$this->type/home.php";
+    }
+  }
+
+  public function getLoad ()
+  {
+    return $this->load();
   }
 }
 
@@ -28,12 +44,13 @@ $Collection=new getUrl('collection');
 $Shoes=new getUrl('shoes');
 $SpecialPrices=new getUrl('specialPrices');
 $JoinLife=new getUrl('joinLife');
+
 class getUrl
 {
   private $gender;
   private $mainSort;
 
-  function __construct($mainSort)
+  public function __construct($mainSort)
   {
     $this->gender=($_GET['page']!='home')?$_GET['page']:'men';
     $this->mainSort=$mainSort;
@@ -49,10 +66,6 @@ class getUrl
     return $this->mainUrl();
   }
 }
-
-
-
-
 
 
 
