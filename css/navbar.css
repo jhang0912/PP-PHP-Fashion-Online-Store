@@ -23,6 +23,14 @@
   text-decoration: none;
   color: white;
 }
+#Navbar #menLine
+{
+  background-color: white;
+}
+#Navbar #womenLine
+{
+  background-color: white;
+}
 #Navbar .control
 {
   justify-content: flex-end;
@@ -31,7 +39,7 @@
 {
   background-color: rgb(240, 240, 240);
 }
-/* #Navbar RWD */
+/* RWD */
 @media (min-width: 0px) and (max-width: 767px) {
   #Navbar .home
   {
@@ -46,4 +54,13 @@
     margin-top: 1rem;
   } 
 }
+/* animation */
+@keyframes bottomLine {
+  0%{width: 0px;}
+  100%{width: 100%;opacity: 1;}
+  }
+@keyframes reBottomLine {
+  0%{width: 100%;}
+  100%{width: 0px;opacity: 1;}
+  }
 

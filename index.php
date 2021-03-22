@@ -34,11 +34,21 @@
 
     <div class="gender d-none d-md-flex justify-content-center align-items-center col-2">
       <div class="men m-3">
-        <a href="?gender=men" title="男士">MEN</a>
+          <a href="?page=men" title="男士">
+            MEN
+            
+            <div id="menLine"></div>
+          </a>
       </div>
 
       <div class="women m-3">
-        <a href="?gender=women" title="女士">WOMEN</a>
+        <div class="womenCon">
+          <a href="?page=women" title="女士">
+            WOMEN
+
+            <div id="womenLine"></div>
+          </a>
+        </div>
       </div>
     </div>
 
@@ -62,15 +72,15 @@
   </div>
 
   <div class="sort container-fluid d-none d-md-flex justify-content-center align-items-center ps-4 pe-4">
-    <div class="newIn m-2 me-4"><a href="?mainSort=newIn" class="text-dark">NEW IN</a></div>
+    <div class="newIn m-2 me-4"><a href="<?=$NewIn->getMainUrl()?>" class="text-dark">NEW IN</a></div>
 
-    <div class="collection m-2 me-4"><a href="?mainSort=collection" class="text-dark">COLLECTION</a></div>
+    <div class="collection m-2 me-4"><a href="<?=$Collection->getMainUrl()?>" class="text-dark">COLLECTION</a></div>
 
-    <div class="shoes m-2 me-4"><a href="?mainSort=shoes" class="text-dark">SHOES</a></div>
+    <div class="shoes m-2 me-4"><a href="<?=$Shoes->getMainUrl()?>" class="text-dark">SHOES</a></div>
 
-    <div class="specialPrices m-2 me-4"><a href="?mainSort=specialPrices" class="text-danger">SPECIAL PRICES</a></div>
+    <div class="specialPrices m-2 me-4"><a href="<?=$SpecialPrices->getMainUrl()?>" class="text-danger">SPECIAL PRICES</a></div>
 
-    <div class="joinLife m-2 me-4"><a href="?mainSort=joinLife" class="text-dark">JOIN LIFE</a></div>
+    <div class="joinLife m-2 me-4"><a href="<?=$JoinLife->getMainUrl()?>" class="text-dark">JOIN LIFE</a></div>
   </div>
 </section>
 
@@ -82,8 +92,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script src="js/navbar.js"></script>
     <script src="js/slick.js"></script>
-    <script src="js/js.js"></script>
 </section>
 </body>
 </html>
