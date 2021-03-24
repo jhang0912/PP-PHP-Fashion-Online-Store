@@ -5,14 +5,12 @@ let genderClicked = url.searchParams.get('page');/* 確定目前的性別分類�
 
 $('.women').on('mouseover',function(){
   if(genderClicked != "women"){
-    document.getElementById('womenLine').style.height="1px";
     document.getElementById('womenLine').style.animation="bottomLine 0.75s ease-in-out 1 forwards";
   }
 })
 
 $('.men').on('mouseover',function(){
   if(genderClicked != "men"){
-    document.getElementById('menLine').style.height="1px";
     document.getElementById('menLine').style.animation="bottomLine 0.75s ease-in-out 1 forwards";
   }
 })

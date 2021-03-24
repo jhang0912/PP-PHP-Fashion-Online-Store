@@ -17,7 +17,12 @@ class loadPages
     $this->page=(!empty($_GET["page"]))?$_GET["page"]:"home";
     $this->type=$type;
   }
-
+  
+  public function getLoad ()
+  {
+    return $this->load();
+  }
+  
   private function load ()
   {
     $pageFile="$this->type/".$this->page.".php";
@@ -32,10 +37,6 @@ class loadPages
     }
   }
 
-  public function getLoad ()
-  {
-    return $this->load();
-  }
 }
 
 /* 產生主要分類網址 */
@@ -52,8 +53,13 @@ class getUrl
 
   public function __construct($mainSort)
   {
-    $this->gender=($_GET['page']!='home')?$_GET['page']:'men';
+    $this->gender=(!empty($_GET['page']) && $_GET['page']!='home')?$_GET['page']:'men';
     $this->mainSort=$mainSort;
+  }
+
+  public function getMainUrl()
+  {
+    return $this->mainUrl();
   }
 
   private function mainUrl ()
@@ -61,10 +67,6 @@ class getUrl
     return "?page=$this->gender&mainSort=$this->mainSort";
   }
 
-  public function getMainUrl()
-  {
-    return $this->mainUrl();
-  }
 }
 
 

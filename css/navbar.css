@@ -26,10 +26,15 @@
 #Navbar #menLine
 {
   background-color: white;
+  opacity: 0;
+  height: 1px;
+  
 }
 #Navbar #womenLine
 {
   background-color: white;
+  opacity: 0;
+  height: 1px;
 }
 #Navbar .control
 {
