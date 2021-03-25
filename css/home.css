@@ -1,4 +1,11 @@
 /* all */
+#Content
+{
+  width: 100vw;
+  height: calc(100vh - 126px);
+  overflow: hidden;
+  position: relative;
+}
 #Content .slick
 {
   width: 100vw;
@@ -101,6 +108,16 @@
     bottom: 40%;
     z-index: 400;
     cursor: pointer;
+}
+#Content .slick-dots
+{
+  width: 100vw;
+  position: absolute;
+  bottom: 5%;
+}
+#Content .slick-dots li button:before {
+  color: white;
+  
 }
 /* RWD */
 @media (min-width:0px) and (max-width:767px) 
