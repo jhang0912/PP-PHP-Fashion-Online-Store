@@ -29,7 +29,6 @@ $('.men').on('mouseout',function(){
 })
 
 let sortClicked = url.searchParams.get('mainSort');/* 確定目前的主分類是哪一個 */
-console.log(sortClicked)
 
 // 主分類
 $('.sort>div>a').on('mouseover',function(){
@@ -37,18 +36,51 @@ $('.sort>div>a').on('mouseover',function(){
   let nextId =$(next).attr('id')
   if(sortClicked !== nextId)
   {
-    $(next).css('animation','bottomLine 0.75s ease-in-out 1 forwards')
+    $(next).css('animation','bottomLine 0.75s ease-in-out 1 forwards');
   }
 })
 
 $('.sort>div>a').on('mouseout',function(){
-  let next = $(this).next()
-  let nextId =$(next).attr('id')
+  let next = $(this).next();
+  let nextId =$(next).attr('id');
   if(sortClicked !== nextId)
   {
-    $(next).css('animation','reBottomLine 0.75s ease-in-out 1 forwards')
+    $(next).css('animation','reBottomLine 0.75s ease-in-out 1 forwards');
   }
 })
+
+/* sort fadeIn/fadeOut */
+let mouseY,ndSortSt;
+
+$('.sort>div>a').on('mouseover',function(){
+  let next = $(this).next()
+  let nextId =$(next).attr('id')
+
+  $('.ndSort').fadeIn(400,()=>{
+    if(nextId !== ndSortSt)
+    {
+      $('.ndSortCon').fadeOut(400);
+    }
+  });
+
+  setTimeout(function(){
+    $.get('./api/ndSort.php',{nextId},function(res){
+      $('.ndSortCon').html(res)
+    })
+    $('.ndSortCon').fadeIn(400)
+  },400)
+  ndSortSt = nextId;
+})
+
+$("html").mousemove(function(e){
+  mouseY = e.pageY;
+  if(mouseY > 594.5 || mouseY < 79)
+  {
+    $('.ndSort').fadeOut(500);
+    $('.ndSortCon').fadeOut(500);
+  }
+})
+
 
 
 

@@ -72,31 +72,36 @@
   </div>
 
   <div class="sort container-fluid d-none d-md-flex justify-content-center align-items-center ps-4 pe-4">
-    <div class="newIn m-2 me-4">
+    <div class="newIn m-2 ms-3 me-3">
       <a href="<?=$NewIn->getMainUrl()?>" class="text-dark">NEW IN</a>
       <div id="newIn" class="sortLine"></div>
     </div>
   
-  <div class="collection m-2 me-4">
+    <div class="collection m-2 ms-3 me-3">
       <a href="<?=$Collection->getMainUrl()?>" class="text-dark">COLLECTION</a>
       <div id="collection" class="sortLine"></div>
     </div>
     
-    <div class="shoes m-2 me-4">
+    <div class="shoes m-2 ms-3 me-3">
       <a href="<?=$Shoes->getMainUrl()?>" class="text-dark">SHOES</a>
       <div id="shoes" class="sortLine"></div>
     </div>
     
-    <div class="specialPrices m-2 me-4">
+    <div class="specialPrices m-2 ms-3 me-3">
       <a href="<?=$SpecialPrices->getMainUrl()?>" class="text-danger">SPECIAL PRICES</a>
       <div id="specialPrices" class="sortLine"></div>
     </div>
     
-    <div class="joinLife m-2 me-4">
+    <div class="joinLife m-2 ms-3 me-3">
       <a href="<?=$JoinLife->getMainUrl()?>" class="text-dark">JOIN LIFE</a>
       <div id="joinLife" class="sortLine"></div>
     </div>
   </div>
+
+  <div class="ndSort">
+    <div class="ndSortCon flex-wrap justify-content-center align-items-center col-12 ps-5 pe-5"></div>
+  </div>
+
 </section>
 
 <section id="Content">

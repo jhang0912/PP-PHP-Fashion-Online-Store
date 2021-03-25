@@ -3,6 +3,10 @@
 {
   font-family: 'Cinzel', serif;
 }
+body
+{
+  position: relative;
+}
 /* #Navbar */
 #Navbar .navbar
 {
@@ -19,7 +23,7 @@
 }
 #Navbar a
 {
-  font-size: 1.25rem;
+  font-size: 20px;
   text-decoration: none;
   color: white;
 }
@@ -51,6 +55,38 @@
   height: 1px;
   
 }
+#Navbar .ndSort
+{
+  position: absolute;
+  top: 126px;
+  width: 100vw;
+  height: 50vh;
+  background-color: rgb(240, 240, 240);
+  z-index: 500;
+}
+#Navbar .ndSort a
+{
+  font-size: 20px;
+  color: black;
+}
+#Navbar .ndSort
+{
+  display: none;
+}
+#Navbar .ndSortCon
+{
+  display: none;
+}
+#Navbar .ns
+{
+  border: 1px solid rgba(255, 255, 255,0);
+  transition: all 0.5s ease-in ;
+}
+#Navbar .ns:hover
+{
+  border: 1px solid rgba(0, 0,0,1);
+}
+
 /* RWD */
 @media (min-width: 0px) and (max-width: 767px) {
   #Navbar .home

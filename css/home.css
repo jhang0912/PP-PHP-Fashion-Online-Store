@@ -122,17 +122,21 @@
 /* RWD */
 @media (min-width:0px) and (max-width:767px) 
 {
+  #Content
+  {
+    height:calc(100vh - 108px);
+  }
   #Content .slick
   {
-    height:calc(100vh - 109.688px);
+    height:calc(100vh - 108px);
   }
   #Content .banner
   {
-    height:calc(100vh - 109.688px);
+    height:calc(100vh - 108px);
   }
   #Content .video
   {
-    height:calc(100vh - 109.688px);
+    height:calc(100vh - 108px);
   }
   
 }
