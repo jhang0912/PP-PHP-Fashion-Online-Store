@@ -2,8 +2,7 @@
 #Content .slick
 {
   width: 100vw;
-  width: 100vw;
-  height: calc(100vh - 125px);
+  height: calc(100vh - 126px);
   overflow: hidden;
   position: relative;
 }
@@ -11,7 +10,7 @@
 {
   position: relative;
   width: 100vw;
-  height: calc(100vh - 125px);
+  height: calc(100vh - 126px);
   overflow: hidden;
 }
 #Content img
@@ -72,7 +71,7 @@
 {
   position: relative;
   width: 100vw;
-  height: calc(100vh - 125px);
+  height: calc(100vh - 126px);
   overflow: hidden;
 }
 #Content video

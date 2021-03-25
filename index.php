@@ -66,21 +66,36 @@
       </div>
 
       <div class="user ms-3 me-3"><a href="?page=userLogin">
-        <i class="fas fa-user m-0 h4"></i></a>
+        <i class="fas fa-sign-in-alt m-0 h4" title="登入"></i></a>
       </div>
     </div>
   </div>
 
   <div class="sort container-fluid d-none d-md-flex justify-content-center align-items-center ps-4 pe-4">
-    <div class="newIn m-2 me-4"><a href="<?=$NewIn->getMainUrl()?>" class="text-dark">NEW IN</a></div>
-
-    <div class="collection m-2 me-4"><a href="<?=$Collection->getMainUrl()?>" class="text-dark">COLLECTION</a></div>
-
-    <div class="shoes m-2 me-4"><a href="<?=$Shoes->getMainUrl()?>" class="text-dark">SHOES</a></div>
-
-    <div class="specialPrices m-2 me-4"><a href="<?=$SpecialPrices->getMainUrl()?>" class="text-danger">SPECIAL PRICES</a></div>
-
-    <div class="joinLife m-2 me-4"><a href="<?=$JoinLife->getMainUrl()?>" class="text-dark">JOIN LIFE</a></div>
+    <div class="newIn m-2 me-4">
+      <a href="<?=$NewIn->getMainUrl()?>" class="text-dark">NEW IN</a>
+      <div id="newIn" class="sortLine"></div>
+    </div>
+  
+  <div class="collection m-2 me-4">
+      <a href="<?=$Collection->getMainUrl()?>" class="text-dark">COLLECTION</a>
+      <div id="collection" class="sortLine"></div>
+    </div>
+    
+    <div class="shoes m-2 me-4">
+      <a href="<?=$Shoes->getMainUrl()?>" class="text-dark">SHOES</a>
+      <div id="shoes" class="sortLine"></div>
+    </div>
+    
+    <div class="specialPrices m-2 me-4">
+      <a href="<?=$SpecialPrices->getMainUrl()?>" class="text-danger">SPECIAL PRICES</a>
+      <div id="specialPrices" class="sortLine"></div>
+    </div>
+    
+    <div class="joinLife m-2 me-4">
+      <a href="<?=$JoinLife->getMainUrl()?>" class="text-dark">JOIN LIFE</a>
+      <div id="joinLife" class="sortLine"></div>
+    </div>
   </div>
 </section>
 
