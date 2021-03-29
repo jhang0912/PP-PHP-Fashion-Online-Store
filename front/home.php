@@ -5,7 +5,10 @@
     <div class="article">NEW IN</div>
 
     <a href="<?=$NewIn->getMainUrl()?>">
-      <div class="button d-flex justify-content-center align-items-center"><div>SHOP NOW</div></div>
+      <div class="button d-flex justify-content-center align-items-center">
+        <div class="shopNow d-flex justify-content-center align-items-center">SHOP NOW</div>&ensp;
+        <i class="arrowR fas fa-arrow-right h4 m-0 animate__animated animate__infinite"></i>
+      </div>
     </a>
   </div>
 
@@ -15,7 +18,10 @@
     <div class="article">COLLECTION</div>
 
     <a href="<?=$Collection->getMainUrl()?>">
-      <div class="button d-flex justify-content-center align-items-center"><div>SHOP NOW</div></div>
+      <div class="button d-flex justify-content-center align-items-center">
+        <div class="shopNow d-flex justify-content-center align-items-center">SHOP NOW</div>&ensp;
+        <i class="arrowR fas fa-arrow-right h4 m-0 animate__animated animate__infinite"></i>
+      </div>
     </a>
   </div>
 
@@ -25,7 +31,10 @@
     <div class="article">SHOES</div>
 
     <a href="<?=$Shoes->getMainUrl()?>">
-      <div class="button d-flex justify-content-center align-items-center"><div>SHOP NOW</div></div>
+      <div class="button d-flex justify-content-center align-items-center">
+        <div class="shopNow d-flex justify-content-center align-items-center">SHOP NOW</div>&ensp;
+        <i class="arrowR fas fa-arrow-right h4 m-0 animate__animated animate__infinite"></i>
+      </div>
     </a>
   </div>
 
@@ -33,7 +42,10 @@
     <video autoplay loop muted src="video/specialPrices.mp4"></video>
 
     <a href="<?=$SpecialPrices->getMainUrl()?>">
-      <div class="button2 d-flex justify-content-center align-items-center"><div>SHOP NOW</div></div>
+      <div class="button2 d-flex justify-content-center align-items-center">
+        <div class="shopNow d-flex justify-content-center align-items-center">SHOP NOW</div>&ensp;
+        <i class="arrowR fas fa-arrow-right h4 m-0 animate__animated animate__infinite"></i>
+      </div>
     </a>
   </div>
 </div>

@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  /* 輪播效果*/
   $('.slick').slick({
     dots: true,
     infinite: true,
@@ -10,4 +11,28 @@ $(document).ready(function(){
     prevArrow: $('.prev'),
     nextArrow: $('.next'),
   });
+
 });
+
+/* 箭頭按鈕動態效果 */
+$('.button').on('mouseover',function(){
+  $('.arrowR').removeClass('animate__fadeOutRight');
+  $('.arrowR').addClass('animate__fadeInLeft');
+})
+
+$('.button').on('mouseout',function(){
+  $('.arrowR').removeClass('animate__fadeInLeft');
+})
+
+$('.button2').on('mouseover',function(){
+  $('.arrowR').removeClass('animate__fadeOutRight');
+  $('.arrowR').addClass('animate__fadeInLeft');
+})
+
+$('.button2').on('mouseout',function(){
+  $('.arrowR').removeClass('animate__fadeInLeft');
+})
+
+
+
+

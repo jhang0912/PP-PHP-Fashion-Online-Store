@@ -50,6 +50,7 @@ $('.sort>div>a').on('mouseout',function(){
 })
 
 /* sort fadeIn/fadeOut */
+let genderClick = url.searchParams.get('page');
 let mouseY,ndSortSt;
 
 $('.sort>div>a').on('mouseover',function(){
@@ -64,12 +65,12 @@ $('.sort>div>a').on('mouseover',function(){
   });
 
   setTimeout(function(){
-    if(genderClicked =='home' || genderClicked =='')
+    if(genderClick =='home' || genderClick =='')
     {
-      genderClicked = 'men';
+      genderClick = 'men';
     }
 
-    $.get('./api/ndSort.php',{genderClicked,nextId},function(res){
+    $.get('./api/ndSort.php',{genderClick,nextId},function(res){
       $('.ndSortCon').html(res)
     })
     $('.ndSortCon').fadeIn(400)

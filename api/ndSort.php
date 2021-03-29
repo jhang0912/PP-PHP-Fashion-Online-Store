@@ -49,7 +49,7 @@ foreach (${$_GET['nextId']} as $key => $value)
 {
   ${$value}=new getUrl2($_GET['nextId'],$value);
 ?>
-<div class="ns text-center m-3"><a class="<?=($_GET['nextId']=='specialPrices')?'text-danger':'';?>" href="?page=<?=$_GET['genderClicked']?><?=${$value}->getNdUrl()?>"><?=$value?></a></div>
+<div class="ns text-center m-3"><a class="<?=($_GET['nextId']=='specialPrices')?'text-danger':'';?>" href="?page=<?=$_GET['genderClick']?><?=${$value}->getNdUrl()?>"><?=$value?></a></div>
 <?php
 }
 ?>
