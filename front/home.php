@@ -48,6 +48,19 @@
       </div>
     </a>
   </div>
+
+  <div class="video">
+    <video autoplay loop muted src="video/joinLife.mp4"></video>
+
+    <div class="article">JOIN LIFE</div>
+
+    <a href="<?=$JoinLife->getMainUrl()?>">
+      <div class="button d-flex justify-content-center align-items-center">
+        <div class="shopNow d-flex justify-content-center align-items-center">SHOP NOW</div>&ensp;
+        <i class="arrowR fas fa-arrow-right h4 m-0 animate__animated animate__infinite"></i>
+      </div>
+    </a>
+  </div>
 </div>
 
 <div class="arrow">

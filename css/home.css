@@ -76,6 +76,7 @@
 }
 #Content .shopNow
 {
+  --animate-duration: 2s;
   position: relative;
   height: 60px;
 }
