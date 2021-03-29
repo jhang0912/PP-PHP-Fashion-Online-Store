@@ -56,18 +56,43 @@ class getUrl
     $this->gender=(!empty($_GET['page']) && $_GET['page']!='home')?$_GET['page']:'men';
     $this->mainSort=$mainSort;
   }
-
+  
   public function getMainUrl()
   {
     return $this->mainUrl();
   }
-
+  
   private function mainUrl ()
   {
     return "?page=$this->gender&mainSort=$this->mainSort";
   }
 
 }
+
+/* 產生次分類網址 */
+
+class getUrl2
+{
+  private $ndSort;
+  private $mainSort;
+
+  public function __construct($mainSort,$ndSort)
+  {
+    $this->mainSort=$mainSort;
+    $this->ndSort=$ndSort;
+  }
+
+  public function getNdUrl()
+  {
+    return $this->ndUrl();
+  }
+
+  private function ndUrl()
+  {
+    return "&mainSort=$this->mainSort&ndSort=$this->ndSort";
+  }
+}
+
 
 
 

@@ -1,15 +1,16 @@
 <?php
+include_once "../toolKit.php";
 
-// $_GET['nextId']='newIn';
-
-$newIn=[
+$newIn=
+[
   'This Week',
   'All New Arrivals',
   'Collection',
   'Shoes'
 ];
 
-$collection=[
+$collection=
+[
   'Jackets',
   'Leather jackets',
   'Blazers',
@@ -20,7 +21,8 @@ $collection=[
   'Polos',
 ];
 
-$shoes=[
+$shoes=
+[
   'All',
   'Sneakers',
   'loafers',
@@ -28,7 +30,8 @@ $shoes=[
   'C-ONE Capsule'
 ];
 
-$specialPrices=[
+$specialPrices=
+[
   'All',
   'Shirt & POLO & T-Shirt',
   'Trousers',
@@ -36,15 +39,17 @@ $specialPrices=[
   'Shoes'
 ];
 
-$joinLife=[
+$joinLife=
+[
   'Collection'
 ];
 
 
 foreach (${$_GET['nextId']} as $key => $value) 
 {
+  ${$value}=new getUrl2($_GET['nextId'],$value);
 ?>
-<div class="ns text-center m-3"><a href="<?=$value?>"><?=$value?></a></div>
+<div class="ns text-center m-3"><a class="<?=($_GET['nextId']=='specialPrices')?'text-danger':'';?>" href="?page=<?=$_GET['genderClicked']?><?=${$value}->getNdUrl()?>"><?=$value?></a></div>
 <?php
 }
 ?>

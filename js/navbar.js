@@ -64,7 +64,12 @@ $('.sort>div>a').on('mouseover',function(){
   });
 
   setTimeout(function(){
-    $.get('./api/ndSort.php',{nextId},function(res){
+    if(genderClicked =='home' || genderClicked =='')
+    {
+      genderClicked = 'men';
+    }
+
+    $.get('./api/ndSort.php',{genderClicked,nextId},function(res){
       $('.ndSortCon').html(res)
     })
     $('.ndSortCon').fadeIn(400)
