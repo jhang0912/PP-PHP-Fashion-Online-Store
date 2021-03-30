@@ -69,7 +69,7 @@ $('.sort>div>a').on('mouseover',function(){
     {
       genderClick = 'men';
     }
-
+    //產生前端元件//
     $.get('./api/ndSort.php',{genderClick,nextId},function(res){
       $('.ndSortCon').html(res)
     })

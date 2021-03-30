@@ -116,6 +116,7 @@
     <script type="text/javascript" src="slick/slick.min.js"></script>
     <script src="js/navbar.js"></script>
     <script src="js/slick.js"></script>
+    <script src="js/forInspiration.js"></script>
 </section>
 </body>
 </html>

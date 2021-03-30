@@ -5,7 +5,7 @@ $(document).ready(function(){
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 6000,
     speed: 2000,
     prevArrow: $('.prev'),
