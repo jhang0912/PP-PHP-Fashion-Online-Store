@@ -1,4 +1,4 @@
-<div class="slick">
+<div class="slick mb-4">
   <div class="banner">
     <img src="img/newIn.jpg">
     <div class="article">NEW IN</div>
@@ -50,35 +50,19 @@
   </div>
 </div>
 
-<div class="arrow">
+<div class="arrow1">
   <i class="prev fas fa-chevron-left h2 text-white m-0"></i>
+</div>
+
+<div class="arrow2">
   <i class="next fas fa-chevron-right h2 text-white m-0"></i>
 </div>
 
 <div class="title container-fluid text-center h2 mb-4">For Inspiration</div>
-<div class="forInspiration container-fluid d-flex flex-wrap justify-content-center align-items-center">
-  <div class="for-card d-flex flex-wrap justify-content-center align-items-center border rounded overflow-hidden shadow-sm m-3">
-    <img src="./img/forInspiration/1.jpg">
-    <h3 class="col-12 ms-5">title</h3>
-    <h5 class="col-12 ms-5">name</h5>
-    <h5 class="col-12 ms-5">price</h5>
+<div class="forInspirationCon">
+  <i class="prev2 fas fa-arrow-left rounded h2 m-0"></i>
+  <div class="forInspiration container-fluid d-flex flex-wrap justify-content-center align-items-center">
+    <?php include "api/forInspiration.php" ?>
   </div>
-  <div class="for-card d-flex flex-wrap justify-content-center align-items-center border rounded overflow-hidden shadow-sm m-3">
-    <img src="./img/forInspiration/2.jpg">
-    <h3 class="col-12 ms-5">title</h3>
-    <h5 class="col-12 ms-5">name</h5>
-    <h5 class="col-12 ms-5">price</h5>
-  </div>
-  <div class="for-card d-flex flex-wrap justify-content-center align-items-center border rounded overflow-hidden shadow-sm m-3">
-    <img src="./img/forInspiration/3.jpg">
-    <h3 class="col-12 ms-5">title</h3>
-    <h5 class="col-12 ms-5">name</h5>
-    <h5 class="col-12 ms-5">price</h5>
-  </div>
-  <div class="for-card d-flex flex-wrap justify-content-center align-items-center border rounded overflow-hidden shadow-sm m-3">
-    <img src="./img/forInspiration/4.jpg">
-    <h3 class="col-12 ms-5">title</h3>
-    <h5 class="col-12 ms-5">name</h5>
-    <h5 class="col-12 ms-5">price</h5>
-  </div>
+  <i class="next2 fas fa-arrow-right rounded h2 m-0"></i>
 </div>
