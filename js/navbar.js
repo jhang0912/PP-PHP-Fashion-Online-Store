@@ -1,3 +1,5 @@
+/* wow.js */
+new WOW().init();
 /* bottomLine */
 let getUrlString = location.href;
 let url = new URL(getUrlString);

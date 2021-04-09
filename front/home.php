@@ -58,7 +58,37 @@
   <i class="next fas fa-chevron-right h2 text-white m-0"></i>
 </div>
 
+<div class="title container-fluid text-center h2 mb-4">New In</div>
+
+<div class="newInShowCon p-3 mb-4">
+  <div class="newInShow container d-flex flex-wrap justify-content-center align-items-center wow animate__animated animate__slideInUp">
+    <div class="new-card col-5 d-flex flex-wrap justify-content-center align-items-center me-5">
+      <a href="">
+        <div class="uk-inline-clip uk-transition-toggle rounded" tabindex="0">
+            <img src="img/newInShow/1.jpg">
+            <img src="img/newInShow/4.jpg" class="uk-transition-scale-up uk-position-cover">
+        </div>
+      </a>
+      <div class="new-card-content h3 text-white">
+        <div class="new-card-title h1 text-white">Men's Life Style</div>
+        <div class="h4 text-white">shop now</div>
+        <i class="newcard-arrowR fas fa-arrow-right h4 m-0 animate__animated animate__infinite"></i>
+      </div>
+    </div>
+
+    <div class="new-card col-5 d-flex flex-wrap justify-content-center align-items-center">
+      <a href=""><img src="img/newInShow/2.jpg" class="rounded"></a>
+      <div class="new-card-content h3 text-white">
+        <div class="new-card-title h1 text-white">New Arrivals For Spring</div>
+        <div class="h4 text-white">shop now</div>
+        <i class="newcard-arrowR fas fa-arrow-right h4 m-0 animate__animated animate__infinite"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="title container-fluid text-center h2 mb-4">For Inspiration</div>
+
 <div class="forInspirationCon">
   <i class="prev2 fas fa-arrow-left rounded h2 m-0"></i>
   <div class="forInspiration container-fluid d-flex flex-wrap justify-content-center align-items-center">

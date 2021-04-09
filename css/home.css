@@ -23,6 +23,7 @@
   position: absolute;
     width: auto;
     height: auto;
+    max-width: none;
     min-width: 100%;
     min-height: 100%;
     display: block;
@@ -93,6 +94,7 @@
   position: absolute;
     width: auto;
     height: auto;
+    max-width: none;
     min-width: 100%;
     min-height: 100%;
     display: block;
@@ -139,19 +141,41 @@
   position: absolute;
   bottom: 5%;
 }
-#Content .slick-dots li button:before {
+#Content .slick-dots li button:before 
+{
   color: white;
   
 }
+#Content .newInShow
+{
+  --animate-duration: 1.5s;
+}
+#Content .newInShowCon
+{
+  background-color: rgb(25, 25, 25);
+}
+#Content .new-card
+{
+  position: relative;
+}
+#Content .new-card-content
+{
+  position: absolute;
+  bottom: 2.5%;
+  left: 10%;
+  text-shadow: 1px 1px 2.5px gray;
+}
+#Content .new-card-title
+{
+  font-family: 'Kanit', sans-serif;
+  font-size: 50px;
+}
+
 #Content .forInspirationCon
 {
   position: relative;
 }
-/* #Content .for-card
-{
-  width: 20%;
-} */
-#Content >img
+#Content .forInspiration >img
 {
   position: relative;
   top: 50%;
