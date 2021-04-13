@@ -130,6 +130,7 @@
     <script src="js/slick.js"></script>
     <script src="js/newInShow.js"></script>
     <script src="js/forInspiration.js"></script>
+    <script src="js/collection.js"></script>
   </section>
 </body>
 
