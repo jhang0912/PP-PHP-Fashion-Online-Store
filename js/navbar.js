@@ -67,9 +67,12 @@ $('.sort>div>a').on('mouseover',function(){
   });
 
   setTimeout(function(){
-    if(genderClick =='home' || genderClick =='')
+    if(genderClick =='home' || genderClick == null)
     {
       genderClick = 'men';
+    }else
+    {
+      genderClicked = url.searchParams.get('page');
     }
     //產生前端元件//
     $.get('./api/ndSort.php',{genderClick,nextId},function(res){

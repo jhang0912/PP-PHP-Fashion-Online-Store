@@ -59,13 +59,16 @@
 </div>
 
 <div class="title container-fluid text-center h2 mb-4">New In</div>
-
 <div class="newInShowCon p-3 mb-4">
   <?php include "api/newShow.php" ?>
 </div>
 
 <div class="title container-fluid text-center h2 mb-4">For Inspiration</div>
-
-<div class="forInspirationCon">
+<div class="forInspirationCon mb-4">
   <?php include "api/forInspiration.php" ?>
+</div>
+
+<div class="title container-fluid text-center h2 mb-4">Collection</div>
+<div class="collectionCon mb-4">
+  <?php include "api/collection.php" ?>
 </div>

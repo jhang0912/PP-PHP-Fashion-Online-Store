@@ -1,0 +1,40 @@
+#Content .collectionCon
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(25, 25, 25);
+  padding-top: 30px;
+  /* padding-left: 200px;
+  padding-right: 200px; */
+}
+#Content .collectionShow
+{
+  width: 65vw;
+}
+#Content .co-title
+{
+  font-size: 20px;
+  white-space: nowrap;
+}
+/* RWD */
+
+@media (min-width:992px) and (max-width:1199px) 
+{
+  #Content .co-title
+  {
+    font-size: 15px;
+  }
+}
+@media (min-width:0px) and (max-width:991px) 
+{
+  #Content .collectionShow
+  {
+    width: 75vw;
+  }
+  #Content .co-title
+  {
+    font-size: 10px;
+  }
+}

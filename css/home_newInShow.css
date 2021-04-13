@@ -24,10 +24,6 @@
   font-size: 50px;
 }
 /* RWD */
-@media (min-width:992px)
-{
-
-}
 @media (min-width:576px) and (max-width:991px) 
 {
   #Content .new-card-title
