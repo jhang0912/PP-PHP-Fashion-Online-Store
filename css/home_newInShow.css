@@ -1,0 +1,53 @@
+#Content .newInShow
+{
+  --animate-duration: 1.5s;
+}
+#Content .newInShowCon
+{
+  background-color: rgb(25, 25, 25);
+}
+#Content .new-card
+{
+  position: relative;
+  margin: 16px;
+}
+#Content .new-card-content
+{
+  position: absolute;
+  bottom: 2.5%;
+  left: 10%;
+  text-shadow: 1px 1px 2.5px gray;
+}
+#Content .new-card-title
+{
+  font-family: 'Kanit', sans-serif;
+  font-size: 50px;
+}
+/* RWD */
+@media (min-width:992px)
+{
+
+}
+@media (min-width:576px) and (max-width:991px) 
+{
+  #Content .new-card-title
+  {
+    font-size: 40px;
+  }
+  #Content .new-shop-now
+  {
+    font-size: 8px;
+  }
+}
+@media (min-width:0px) and (max-width:575px) 
+{
+  #Content .new-card-title
+  {
+    font-size: 20px;
+  }
+  #Content .new-shop-now
+  {
+    font-size: 4px;
+  }
+}
+

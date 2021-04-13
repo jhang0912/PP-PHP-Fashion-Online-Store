@@ -27,8 +27,10 @@
     integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g=="
     crossorigin="anonymous"></script>
   <!-- css -->
-  <link rel="stylesheet" href="css/navbar.css">
-  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/home_navbar.css">
+  <link rel="stylesheet" href="css/home_slick.css">
+  <link rel="stylesheet" href="css/home_newInShow.css">
+  <link rel="stylesheet" href="css/home_forInspirationCon.css">
   <!-- title -->
   <title>Fashion Online Store</title>
 </head>

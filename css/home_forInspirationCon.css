@@ -1,0 +1,40 @@
+#Content .forInspirationCon
+{
+  position: relative;
+}
+#Content .forInspiration >img
+{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+#Content .prev2
+{
+  position: absolute;
+  top: 2%;
+  left: 45px;
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.25s ease-in;
+}
+#Content .prev2:hover
+{
+  color: black;
+
+}
+#Content .next2
+{
+  position: absolute;
+  top: 2%;
+  right: 45px;
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.25s ease-in;
+}
+#Content .next2:hover
+{
+  color: black;
+}
