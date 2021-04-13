@@ -72,3 +72,13 @@
 <div class="collectionCon mb-4">
   <?php include "api/collection.php" ?>
 </div>
+
+<div class="title container-fluid text-center h2 mb-4">special Prices</div>
+<div class="specialPricesCon mb-4">
+  <?php include "api/specialPrices.php" ?>
+</div>
+
+
+
+
+

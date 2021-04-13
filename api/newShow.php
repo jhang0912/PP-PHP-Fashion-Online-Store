@@ -15,7 +15,6 @@
       </a>
       <div class="new-card-content h3 text-white">
         <div class="new-card-title h1 text-white"><?= $title[$i] ?></div>
-        <div class="new-shop-now h4 text-white">shop now</div>
         <i class="newcard-arrowR fas fa-arrow-right h4 m-0 animate__animated animate__infinite"></i>
       </div>
     </div>
