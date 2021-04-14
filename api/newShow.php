@@ -1,4 +1,4 @@
-<div class="newInShow container d-flex flex-wrap justify-content-center align-items-center wow animate__animated animate__slideInUp">
+<div class="newInShow container d-flex flex-wrap justify-content-center align-items-center">
   <?php
   $title = [
     1 => "Men's Life Style",
@@ -8,7 +8,7 @@
   ?>
     <div class="new-card col-12 col-lg-5 d-flex flex-wrap justify-content-center align-items-center">
       <a href="">
-        <div class="uk-inline-clip uk-transition-toggle rounded" tabindex="0">
+        <div class="uk-inline-clip uk-transition-toggle" tabindex="0">
           <img src="img/newInShow/<?= $i ?>.jpg">
           <img src="img/newInShow/<?= $i + 1 ?>.jpg" class="uk-transition-scale-up uk-position-cover">
         </div>

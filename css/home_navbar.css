@@ -6,6 +6,7 @@
 body
 {
   position: relative;
+  background-color: rgb(250, 250, 250);
 }
 /* #Navbar */
 #Navbar .navbar

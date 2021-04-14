@@ -4,12 +4,11 @@
 }
 #Content .newInShowCon
 {
-  background-color: rgb(25, 25, 25);
+  /* background-color: rgb(25, 25, 25); */
 }
 #Content .new-card
 {
   position: relative;
-  margin: 16px;
 }
 #Content .new-card-content
 {
@@ -21,7 +20,7 @@
 #Content .new-card-title
 {
   font-family: 'Kanit', sans-serif;
-  font-size: 50px;
+  font-size: 40px;
 }
 /* RWD */
 @media (min-width:576px) and (max-width:991px) 

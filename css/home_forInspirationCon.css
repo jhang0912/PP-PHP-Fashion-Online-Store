@@ -13,7 +13,7 @@
 {
   position: absolute;
   top: 2%;
-  left: 45px;
+  left: 70px;
   color: white;
   cursor: pointer;
   z-index: 1000;
@@ -28,7 +28,7 @@
 {
   position: absolute;
   top: 2%;
-  right: 45px;
+  right: 70px;
   color: white;
   cursor: pointer;
   z-index: 1000;
