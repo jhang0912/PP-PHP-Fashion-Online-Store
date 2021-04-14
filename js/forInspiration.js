@@ -4,7 +4,7 @@ $(document).ready(function () {
     arrows: true,
     infinite: true,
     autoplay: false,
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 1,
     speed: 1000,
     prevArrow: $('.prev2'),
@@ -25,12 +25,3 @@ $(document).ready(function () {
     ]
   });
 });
-/* 元件動態陰影效果 */
-$('.for-card').on('mouseover', function () {
-  $(this).removeClass('shadow-sm');
-  $(this).addClass('shadow');
-})
-$('.for-card').on('mouseout', function () {
-  $(this).removeClass('shadow');
-  $(this).addClass('shadow-sm');
-})

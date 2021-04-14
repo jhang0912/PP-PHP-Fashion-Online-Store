@@ -74,11 +74,12 @@
 </div>
 
 <div class="title container-fluid text-center h2 mb-4">special Prices</div>
-<div class="specialPricesCon mb-5">
+<div class="specialPricesCon mb-4">
   <?php include "api/specialPrices.php" ?>
 </div>
-<div class="specialPricesCon2 uk-container mb-5">
-  <?php include "api/forInspiration.php" ?>
+
+<div class="specialPricesCon-card uk-container mb-5">
+  <?php include "api/specialPrices-card.php" ?>
 </div>
 
 
