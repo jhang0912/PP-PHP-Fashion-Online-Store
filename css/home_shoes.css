@@ -1,0 +1,11 @@
+#Content .shoesCon
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+#Content .shoesShow
+{
+  width: 65vw;
+}
