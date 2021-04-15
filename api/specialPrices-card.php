@@ -6,7 +6,7 @@
       <a href=""><img src="./img/specialPrices/<?= $i ?>.jpg"></a>
       <div class="h2 col-12 ms-5">title</div>
       <div class="h5 col-12 ms-5">name</div>
-      <div class="h5 col-12 ms-5">price</div>
+      <div class="h5 col-12 ms-5 text-danger">price</div>
     </div>
   <?php
   }
@@ -18,7 +18,7 @@
       <a href=""><img src="./img/specialPrices/<?= $i ?>.jpg"></a>
       <div class="h2 col-12 ms-5">title</div>
       <div class="h5 col-12 ms-5">name</div>
-      <div class="h5 col-12 ms-5">price</div>
+      <div class="h5 col-12 ms-5 text-danger">price</div>
     </div>
   <?php
   }

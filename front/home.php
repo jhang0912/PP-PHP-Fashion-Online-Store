@@ -58,29 +58,32 @@
   <i class="next fas fa-chevron-right h2 text-white m-0"></i>
 </div>
 
-<div class="title container-fluid text-center h2 mb-4">New In</div>
-<div class="newInShowCon mb-5">
+<div class="newInShowCon bg-light mb-5 p-3">
+<div class="title container-fluid text-center h2">New In</div>
   <?php include "api/newShow.php" ?>
 </div>
 
-<div class="title container-fluid text-center h2 mb-4">For Inspiration</div>
-<div class="forInspirationCon uk-container uk-container-large mb-5">
+<div class="forInspirationCon uk-container uk-container-large bg-light mb-5 p-3">
+<div class="title container-fluid text-center h2">For Inspiration</div>
   <?php include "api/forInspiration.php" ?>
 </div>
 
-<div class="title container-fluid text-center h2 mb-4">Collection</div>
-<div class="collectionCon mb-5">
+<div class="collectionCon bg-light mb-5 p-3">
+<div class="title container-fluid text-center h2">Collection</div>
   <?php include "api/collection.php" ?>
 </div>
 
-<div class="title container-fluid text-center h2 mb-4">special Prices</div>
-<div class="specialPricesCon mb-4">
-  <?php include "api/specialPrices.php" ?>
+<div class="collectionCon bg-light mb-5 p-3">
+<div class="title container-fluid text-center h2">Shoes</div>
+  <?php include "api/shoes.php" ?>
 </div>
 
-<div class="specialPricesCon-card uk-container mb-5">
+<div class="specialPricesCon uk-container uk-container-large bg-light mb-5 p-3">
+<div class="title container-fluid text-center h2 text-danger">special Prices</div>
   <?php include "api/specialPrices-card.php" ?>
 </div>
+
+
 
 
 
