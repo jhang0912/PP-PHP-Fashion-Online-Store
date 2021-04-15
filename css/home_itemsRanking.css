@@ -1,0 +1,15 @@
+#Content .itemRankShow
+{
+  position: relative;
+}
+#Content .itemRank-card
+{
+  position: relative;
+}
+#Content .rankP
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+}

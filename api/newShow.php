@@ -6,7 +6,7 @@
   ];
   for ($i = 1; $i <= 3; $i += 2) {
   ?>
-    <div class="new-card col-12 col-lg-5 d-flex flex-wrap justify-content-center align-items-center">
+    <div class="new-card col-12 col-lg-4 d-flex flex-wrap justify-content-center align-items-center me-2">
       <a href="">
         <div class="uk-inline-clip uk-transition-toggle" tabindex="0">
           <img src="img/newInShow/<?= $i ?>.jpg">

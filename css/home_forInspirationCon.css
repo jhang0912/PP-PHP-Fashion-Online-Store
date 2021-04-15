@@ -12,29 +12,20 @@
 #Content .prev2
 {
   position: absolute;
-  top: 13%;
-  left: 65px;
-  color: white;
+  top: 50%;
+  left: 2%;
+  transform: translateY(-50%);
+  color: rgb(25, 25, 25);
   cursor: pointer;
   z-index: 1000;
-  transition: all 0.25s ease-in;
-}
-#Content .prev2:hover
-{
-  color: black;
-
 }
 #Content .next2
 {
   position: absolute;
-  top: 13%;
-  right: 65px;
-  color: white;
+  top: 50%;
+  right: 2%;
+  transform: translateY(-50%);
+  color: rgb(25, 25, 25);
   cursor: pointer;
   z-index: 1000;
-  transition: all 0.25s ease-in;
-}
-#Content .next2:hover
-{
-  color: black;
 }

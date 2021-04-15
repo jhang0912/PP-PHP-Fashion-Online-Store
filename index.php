@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="css/home_slick.css">
   <link rel="stylesheet" href="css/home_newInShow.css">
   <link rel="stylesheet" href="css/home_forInspirationCon.css">
+  <link rel="stylesheet" href="css/home_itemsRanking.css">
   <link rel="stylesheet" href="css/home_collection.css">
   <link rel="stylesheet" href="css/home_shoes.css">
   <link rel="stylesheet" href="css/home_specialPrices.css">

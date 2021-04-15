@@ -63,7 +63,7 @@
   <?php include "api/newShow.php" ?>
 </div>
 
-<div class="forInspirationCon uk-container uk-container-large bg-light mb-5 p-3">
+<div class="forInspirationCon uk-container uk-container-large bg-light shadow mb-5 p-3">
 <div class="title container-fluid h2 text-center">For Inspiration</div>
   <?php include "api/forInspiration.php" ?>
 </div>
@@ -73,12 +73,17 @@
   <?php include "api/collection.php" ?>
 </div>
 
+<div class="itemsRankingCon uk-container uk-container-large bg-light shadow mb-5 p-3">
+<div class="title container-fluid h2 text-center">Items Ranking</div>
+  <?php include "api/itemsRanking.php" ?>
+</div>
+
 <div class="shoesCon bg-light mb-5 p-3">
 <div class="title container-fluid h2 text-center">Shoes</div>
   <?php include "api/shoes.php" ?>
 </div>
 
-<div class="specialPricesCon uk-container uk-container-large bg-light mb-5 p-3">
+<div class="specialPricesCon uk-container uk-container-large bg-light shadow mb-5 p-3">
 <div class="title container-fluid h2 text-center text-danger">special Prices</div>
   <?php include "api/specialPrices-card.php" ?>
 </div>
