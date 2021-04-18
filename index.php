@@ -26,7 +26,7 @@
     integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g=="
     crossorigin="anonymous"></script>
   <!-- css -->
-  <link rel="stylesheet" href="css/home_navbar.css">
+  <link rel="stylesheet" href="css/index_navbar.css">
   <link rel="stylesheet" href="css/home_slick.css">
   <link rel="stylesheet" href="css/home_newInShow.css">
   <link rel="stylesheet" href="css/home_forInspirationCon.css">
@@ -34,6 +34,7 @@
   <link rel="stylesheet" href="css/home_collection.css">
   <link rel="stylesheet" href="css/home_shoes.css">
   <link rel="stylesheet" href="css/home_specialPrices.css">
+  <link rel="stylesheet" href="css/index_footer.css">
   <!-- title -->
   <title>Fashion Online Store</title>
 </head>
@@ -123,7 +124,9 @@
     <?php include $Front->getLoad() ?>
   </section>
 
-  <section id="footer"></section>
+  <section id="footer">
+    <?php include "api/footer.php"; ?>
+  </section>
 
   <section id="javaScript">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

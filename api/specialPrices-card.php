@@ -1,6 +1,6 @@
 <div class="specShow uk-container d-flex justify-content-center align-items-center p-0">
   <?php
-  for ($i = 2; $i <= 5; $i++) {
+  for ($i = 2; $i <= 6; $i++) {
   ?>
     <div class="spec-card d-none d-md-flex flex-wrap justify-content-center align-items-center border overflow-hidden <?= ($i != 2) ? 'ms-3' : ''; ?> <?= ($i != 5) ? 'me-3' : ''; ?>" data-index="<?= $i ?>">
       <a href="">

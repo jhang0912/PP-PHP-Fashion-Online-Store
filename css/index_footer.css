@@ -1,0 +1,8 @@
+#footer .footerCon
+{
+  background-color: rgb(25, 25, 25);
+}
+#footer .footer-child::first-letter
+{
+  font-size: 19px;
+}
