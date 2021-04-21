@@ -87,17 +87,22 @@ $section = [
     <i class="fas fa-heart h2 m-0"></i>
   </div>
 
-  <div class="rwdBar-gender bg-dark">
-    <div class="men text-center border-bottom pt-3 pb-3">
-      <a href="?page=men" title="男士">MEN</a>
-    </div>
+  <div class="rwdBar-genderImg d-flex justify-content-center align-items-center pt-3 pb-3">
+    <img class="rwdBar-men" src="img/gender/men.jpg" style="width: 150px;">
+    <img class="rwdBar-women" src="img/gender/women.jpg" style="width: 150px;">
+  </div>
 
-    <div class="women text-center border-bottom pt-3 pb-3">
-      <a href="?page=women" title="男士">women</a>
+  <div class="rwdBar-genderCon">
+    <div class="rwdBar-gender men text-center h3 m-2 pt-3 pb-3" data-gender="men">
+      MEN
+    </div>
+    
+    <div class="rwdBar-gender women text-center h3 m-2 pt-3 pb-3" data-gender="women">
+      women
     </div>
   </div>
 
-  <div class="rwdBar-sort container d-block accordion accordion-flush" id="accordionFlushExample">
+  <div id="sort-men" class="rwdBar-sort container accordion accordion-flush" id="accordionFlushExample" data-gender="sort-men">
     <?php
     foreach ($section as $key => $value) {
     ?>
@@ -111,17 +116,34 @@ $section = [
             foreach ($value as $key2 => $value2) {
             ?>
               <a href="" class="d-block text-decoration-none mb-3">
-                <?php
-                if ($key == 'Download Our APP') {
-                ?>
-                  <img src="img/<?= $value2 ?>.png" alt="">
-                <?php
-                } else {
-                ?>
                   <div class="rwdBarSort-child container-fluid h6 text-dark p-2"><?= $value2 ?></div>
-                <?php
-                }
-                ?>
+              </a>
+            <?php
+            }
+            ?>
+          </div>
+        </div>
+      </div>
+    <?php
+    }
+    ?>
+  </div>
+
+  <div id="sort-women" class="rwdBar-sort container accordion accordion-flush" id="accordionFlushExample">
+    <?php
+    foreach ($section as $key => $value) {
+    ?>
+      <div class="accordion-item border-bottom border-light mb-3">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse<?= preg_replace("/\s(?=)/", "", $key); ?>" aria-expanded="false" aria-controls="flush-collapse<?= preg_replace("/\s(?=)/", "", $key); ?>">
+          <?= $key ?>
+        </button>
+        <div id="flush-collapse<?= preg_replace("/\s(?=)/", "", $key); ?>" class="accordion-collapse collapse" aria-labelledby="flush-heading<?= preg_replace("/\s(?=)/", "", $key); ?>" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <?php
+            foreach ($value as $key2 => $value2) {
+            ?>
+              <a href="" class="d-block text-decoration-none mb-3">
+                  <div class="rwdBarSort-child container-fluid h6 text-dark p-2"><?= $value2 ?></div>
               </a>
             <?php
             }
@@ -165,3 +187,4 @@ $section = [
 <div class="ndSort col-12">
   <div class="ndSortCon flex-wrap justify-content-center align-items-center col-12 ps-5 pe-5"></div>
 </div>
+

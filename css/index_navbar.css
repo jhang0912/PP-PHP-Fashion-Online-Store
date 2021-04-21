@@ -49,13 +49,17 @@ body
 {
   position: fixed;
   top: 0;
-  left: -85%;
+  left: 0%;
   width: 80vw;
   height: 100vh;
   z-index: 1500;
   overflow-x:hidden;
   overflow-y:auto;
 
+}
+#Navbar .rwdBar-gender.men
+{
+  border: 1px solid black;
 }
 button.accordion-button
 {
