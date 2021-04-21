@@ -127,7 +127,7 @@ $(document).ready(function(){
     })
   }
 
-  //
+  //rwdBar 滑出滑入動態效果
   $('.bars').on('click',function(){
     $('.rwdBar').animate({left:0},500)
   })
@@ -135,6 +135,16 @@ $(document).ready(function(){
   $('.x-cross').on('click',function(){
     $('.rwdBar').animate({left:'-85%'},500)
   })
+  
+  //
+  $(window).resize(function() {
+    let width =$(window).width();
+    if(width > 750){
+      $('.rwdBar').css({
+        left:'-85%'
+      })
+    }
+});
 });
 
 

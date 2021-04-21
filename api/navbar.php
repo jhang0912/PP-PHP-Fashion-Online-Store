@@ -81,7 +81,7 @@ $section = [
   </div>
 </div>
 
-<div class="rwdBar bg-light overflow-auto">
+<div class="rwdBar d-block d-md-none bg-light overflow-auto">
   <div class="rwdBar-control d-flex justify-content-between p-3">
     <i class="x-cross fas fa-times h2 m-0"></i>
     <i class="fas fa-heart h2 m-0"></i>
