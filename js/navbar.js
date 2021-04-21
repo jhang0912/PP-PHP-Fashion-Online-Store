@@ -126,6 +126,15 @@ $(document).ready(function(){
       opacity:1
     })
   }
+
+  //
+  $('.bars').on('click',function(){
+    $('.rwdBar').animate({left:0},500)
+  })
+
+  $('.x-cross').on('click',function(){
+    $('.rwdBar').animate({left:'-85%'},500)
+  })
 });
 
 

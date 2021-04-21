@@ -45,6 +45,40 @@ body
 {
   justify-content: flex-end;
 }
+#Navbar .rwdBar
+{
+  position: fixed;
+  top: 0;
+  left: -85%;
+  width: 80vw;
+  height: 100vh;
+  z-index: 1500;
+  overflow-x:hidden;
+  overflow-y:auto;
+
+}
+button.accordion-button
+{
+  font-size: 20px;
+}
+.accordion-button::after
+{
+  background-image: url(../img/angle-down-solid-black.svg);
+}
+.accordion-button:not(.collapsed)::after
+{
+  background-image: url(../img/angle-down-solid-black.svg);
+}
+.accordion-button:focus
+{
+  border: none;
+  box-shadow: none;
+}
+.accordion-button:not(.collapsed)
+{
+  color: black;
+  background-color: rgba(235, 235, 235,0);
+}
 #Navbar .sort
 {
   background-color: rgb(235, 235, 235);
@@ -83,8 +117,6 @@ body
 {
   border: 1px solid rgba(0, 0,0,1);
 }
-
-
 /* RWD */
 @media (min-width: 0px) and (max-width: 767px) {
   #Navbar .home
