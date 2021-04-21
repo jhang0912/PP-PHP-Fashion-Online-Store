@@ -114,7 +114,7 @@
       </div>
     </div>
 
-    <div class="ndSort">
+    <div class="ndSort col-12">
       <div class="ndSortCon flex-wrap justify-content-center align-items-center col-12 ps-5 pe-5"></div>
     </div>
 
@@ -139,6 +139,7 @@
     <script src="js/newInShow.js"></script>
     <script src="js/forInspiration.js"></script>
     <script src="js/collection.js"></script>
+    <script src="js/footer.js"></script>
   </section>
 </body>
 

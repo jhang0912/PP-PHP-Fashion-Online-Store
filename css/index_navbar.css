@@ -60,19 +60,15 @@ body
 {
   position: absolute;
   top: 126px;
-  width: 100vw;
   height: 50vh;
   background-color: rgb(235, 235, 235);
   z-index: 500;
+  display: none;
 }
 #Navbar .ndSort a
 {
   font-size: 20px;
   color: black;
-}
-#Navbar .ndSort
-{
-  display: none;
 }
 #Navbar .ndSortCon
 {
@@ -87,6 +83,7 @@ body
 {
   border: 1px solid rgba(0, 0,0,1);
 }
+
 
 /* RWD */
 @media (min-width: 0px) and (max-width: 767px) {

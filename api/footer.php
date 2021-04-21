@@ -103,3 +103,7 @@ $section = [
 
   <div class="container-fluid text-center text-white p-2">© 2021 Massimo Dutti All rights reserved.</div>
 </div>
+
+  <div class="toTop justify-content-center align-items-center bg-light rounded-circle">
+    <i class="fas fa-chevron-up h3 text-dark m-0"></i>
+  </div>

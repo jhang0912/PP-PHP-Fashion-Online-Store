@@ -30,7 +30,8 @@ $('.men').on('mouseout',function(){
   }
 })
 
-let sortClicked = url.searchParams.get('mainSort');/* 確定目前的主分類是哪一個 */
+// 確定目前的主分類是哪一個 
+let sortClicked = url.searchParams.get('mainSort');
 
 // 主分類
 $('.sort>div>a').on('mouseover',function(){
@@ -74,7 +75,7 @@ $('.sort>div>a').on('mouseover',function(){
     {
       genderClicked = url.searchParams.get('page');
     }
-    //產生前端元件//
+    //產生前端元件
     $.get('./api/ndSort.php',{genderClick,nextId},function(res){
       $('.ndSortCon').html(res)
     })
@@ -97,7 +98,7 @@ $("html").mousemove(function(e){
 
 /* ready */
 $(document).ready(function(){
-/* 判斷性別分類checked */
+// 判斷性別分類checked 
   if(genderClicked == 'women')
   {
     $('#womenLine').css({

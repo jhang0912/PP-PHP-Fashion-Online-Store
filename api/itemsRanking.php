@@ -10,7 +10,7 @@
         </div>
         <img class="rankP" src="img/itemsRanking/rank<?= $i ?>.png" alt="">
       </a>
-      <div class="h2 col-12 ms-5">title</div>
+      <div class="h3 col-12 ms-5">title</div>
       <div class="h5 col-12 ms-5">name</div>
       <div class="h5 col-12 ms-5">price</div>
     </div>
@@ -31,7 +31,7 @@
         }
         ?>
       </a>
-      <div class="h2 col-12 ms-5">title</div>
+      <div class="h3 col-12 ms-5">title</div>
       <div class="h5 col-12 ms-5">name</div>
       <div class="h5 col-12 ms-5">price</div>
     </div>

@@ -5,7 +5,7 @@
   ?>
     <div class="for-card d-flex flex-wrap justify-content-center align-items-center border overflow-hidden ms-3 me-3" data-index="<?= $i ?>">
       <a href=""><img src="./img/forInspiration/<?= $i ?>.jpg"></a>
-      <div class="h2 col-12 ms-5">title</div>
+      <div class="h3 col-12 ms-5">title</div>
       <div class="h5 col-12 ms-5">name</div>
       <div class="h5 col-12 ms-5">price</div>
     </div>

@@ -9,7 +9,7 @@
           <img class="uk-transition-scale-up uk-position-cover" src="./img/specialPrices/<?= $i ?>_item.jpg">
         </div>
       </a>
-      <div class="h2 col-12 ms-5">title</div>
+      <div class="h3 col-12 ms-5">title</div>
       <div class="h5 col-12 ms-5">name</div>
       <div class="h5 col-12 ms-5 text-danger">price</div>
     </div>
@@ -21,7 +21,7 @@
   ?>
     <div class="spec-card d-flex d-md-none flex-wrap justify-content-center align-items-center border overflow-hidden <?= ($i != 2) ? 'ms-3' : ''; ?> <?= ($i != 3) ? 'me-3' : ''; ?>" data-index="<?= $i ?>">
       <a href=""><img src="./img/specialPrices/<?= $i ?>.jpg"></a>
-      <div class="h2 col-12 ms-5">title</div>
+      <div class="h3 col-12 ms-5">title</div>
       <div class="h5 col-12 ms-5">name</div>
       <div class="h5 col-12 ms-5 text-danger">price</div>
     </div>
