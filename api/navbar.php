@@ -96,13 +96,16 @@ $section = [
     <div class="rwdBar-gender men text-center h3 m-2 pt-3 pb-3" data-gender="men">
       MEN
     </div>
-    
+
     <div class="rwdBar-gender women text-center h3 m-2 pt-3 pb-3" data-gender="women">
       women
     </div>
   </div>
 
   <div id="sort-men" class="rwdBar-sort container accordion accordion-flush" id="accordionFlushExample" data-gender="sort-men">
+    <a class="d-block text-center" href="">
+      <i class="fas fa-home h1 text-dark m-0"></i>
+    </a>
     <?php
     foreach ($section as $key => $value) {
     ?>
@@ -116,7 +119,7 @@ $section = [
             foreach ($value as $key2 => $value2) {
             ?>
               <a href="" class="d-block text-decoration-none mb-3">
-                  <div class="rwdBarSort-child container-fluid h6 text-dark p-2"><?= $value2 ?></div>
+                <div class="rwdBarSort-child container-fluid h6 text-dark p-2"><?= $value2 ?></div>
               </a>
             <?php
             }
@@ -130,6 +133,9 @@ $section = [
   </div>
 
   <div id="sort-women" class="rwdBar-sort container accordion accordion-flush" id="accordionFlushExample">
+    <a class="d-block text-center" href="">
+      <i class="fas fa-home h1 text-dark m-0"></i>
+    </a>
     <?php
     foreach ($section as $key => $value) {
     ?>
@@ -143,7 +149,7 @@ $section = [
             foreach ($value as $key2 => $value2) {
             ?>
               <a href="" class="d-block text-decoration-none mb-3">
-                  <div class="rwdBarSort-child container-fluid h6 text-dark p-2"><?= $value2 ?></div>
+                <div class="rwdBarSort-child container-fluid h6 text-dark p-2"><?= $value2 ?></div>
               </a>
             <?php
             }
@@ -187,4 +193,3 @@ $section = [
 <div class="ndSort col-12">
   <div class="ndSortCon flex-wrap justify-content-center align-items-center col-12 ps-5 pe-5"></div>
 </div>
-
