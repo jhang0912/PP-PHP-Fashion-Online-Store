@@ -87,7 +87,10 @@ $("html").mousemove(function (e) {
   }
 })
 
-
+  //畫面重整時將rwdBar滑入
+  $('.rwdBar').css({
+    left: '-85%'
+  })
 
 
 /* ready */
@@ -127,7 +130,7 @@ $(document).ready(function () {
     $('.rwdBar').animate({ left: '-85%' }, 500)
   })
 
-  //rwdBar 當畫面寬度變寬時，將rwdBar滑出
+  //rwdBar 當畫面寬度變寬時將rwdBar滑入
   $(window).resize(function () {
     let width = $(window).width();
     if (width > 750) {
@@ -136,6 +139,7 @@ $(document).ready(function () {
       })
     }
   });
+
 
   //
   $('.rwdBar-women').hide()

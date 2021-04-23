@@ -103,7 +103,7 @@ $section = [
   </div>
 
   <div id="sort-men" class="rwdBar-sort container accordion accordion-flush" id="accordionFlushExample" data-gender="sort-men">
-    <a class="d-block text-center" href="">
+    <a class="d-block text-center pt-2 pb-2" href="?page=men">
       <i class="fas fa-home h1 text-dark m-0"></i>
     </a>
     <?php
@@ -133,7 +133,7 @@ $section = [
   </div>
 
   <div id="sort-women" class="rwdBar-sort container accordion accordion-flush" id="accordionFlushExample">
-    <a class="d-block text-center" href="">
+    <a class="d-block text-center pt-2 pb-2" href="?page=women">
       <i class="fas fa-home h1 text-dark m-0"></i>
     </a>
     <?php
