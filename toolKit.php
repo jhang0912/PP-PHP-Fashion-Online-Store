@@ -234,7 +234,7 @@ class getUrl2
   }
 }
 
-/* 分辨檔案是否為jpg或mp4 */
+/* 在slick元件中分辨檔案是否為jpg或mp4並產生元件 */
 $men = $mSlick->call_all(['display' => '1']);
 $menNewIn = new getHTML('men',$men[0]['newIn']);
 $menCollection = new getHTML('men',$men[0]['collection']);
@@ -289,3 +289,10 @@ class getHTML
     }
   }
 }
+
+/* 產生性別+主分類的字串 */
+$genderN = ($_GET['page'] == 'men' || $_GET['page'] == 'home') ? 'menNewIn' : 'womenNewIn';
+$genderC = ($_GET['page'] == 'men' || $_GET['page'] == 'home') ? 'menCollection' : 'womenCollection';
+$genderS = ($_GET['page'] == 'men' || $_GET['page'] == 'home') ? 'menShoes' : 'womenShoes';
+$genderSP = ($_GET['page'] == 'men' || $_GET['page'] == 'home') ? 'menSpecialPrice' : 'womenSpecialPrice';
+$genderJ = ($_GET['page'] == 'men' || $_GET['page'] == 'home') ? 'menJoinLife' : 'womenJoinLife';
