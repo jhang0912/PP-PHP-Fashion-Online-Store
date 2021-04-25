@@ -1,6 +1,6 @@
 <?php
 include_once "../toolKit.php";
-$newIn = $NEWIN->call_find(['gender' => $_GET['page'], 'display' => 1]);
+$newIn = $NEWIN->call_find(['gender' => ($_GET['page'] == 'women') ? 'women' : 'men', 'display' => 1]);
 $img = unserialize($newIn['img']);
 ?>
 <div class="newInShow container d-flex flex-wrap justify-content-center align-items-center">

@@ -7,6 +7,8 @@ session_start();
 $mSlick = new DB('Fashion_slick_men');
 $wSlick = new DB('Fashion_slick_women');
 $NEWIN = new DB('Fashion_new_in');
+$mCollection = new DB('Fashion_collection_men');
+$wCollection = new DB('Fashion_collection_women');
 class DB
 {
 
@@ -292,8 +294,8 @@ class getHTML
 }
 
 /* 產生性別+主分類的字串 */
-$genderN = ($_GET['page'] == 'men' || $_GET['page'] == 'home') ? 'menNewIn' : 'womenNewIn';
-$genderC = ($_GET['page'] == 'men' || $_GET['page'] == 'home') ? 'menCollection' : 'womenCollection';
-$genderS = ($_GET['page'] == 'men' || $_GET['page'] == 'home') ? 'menShoes' : 'womenShoes';
-$genderSP = ($_GET['page'] == 'men' || $_GET['page'] == 'home') ? 'menSpecialPrice' : 'womenSpecialPrice';
-$genderJ = ($_GET['page'] == 'men' || $_GET['page'] == 'home') ? 'menJoinLife' : 'womenJoinLife';
+$genderN = ($_GET['page'] == 'women') ? 'womenNewIn' : 'menNewIn';
+$genderC = ($_GET['page'] == 'women') ? 'womenCollection' : 'menCollection';
+$genderS = ($_GET['page'] == 'women') ? 'womenShoes' : 'menShoes';
+$genderSP =($_GET['page'] == 'women') ? 'womenSpecialPrice' : 'menSpecialPrice';
+$genderJ = ($_GET['page'] == 'women') ? 'womenJoinLife' : 'menJoinLife';
