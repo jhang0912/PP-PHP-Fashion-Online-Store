@@ -6,6 +6,7 @@ session_start();
 /* 連接資料庫 */
 $mSlick = new DB('Fashion_slick_men');
 $wSlick = new DB('Fashion_slick_women');
+$NEWIN = new DB('Fashion_new_in');
 class DB
 {
 

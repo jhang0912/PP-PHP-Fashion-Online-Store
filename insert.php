@@ -1,4 +1,4 @@
-INSERT INTO `Fashion_collection_men` (`id`, `name`, `category`, `size`, `describe`, `color`, `fabric`, `price`, `img`, `uploadDate`, `sale`, `no`) VALUES
+<!-- INSERT INTO `Fashion_collection_men` (`id`, `name`, `category`, `size`, `describe`, `color`, `fabric`, `price`, `img`, `uploadDate`, `sale`, `no`) VALUES
 (
 NULL, '100% LINEN SHORT SLEEVE POLO SHIRT',
 'Polos',
@@ -10,9 +10,12 @@ NULL, '100% LINEN SHORT SLEEVE POLO SHIRT',
 '2021-04-25',
 '0',
 '1'
-);
+); -->
 <?php
 serialize([
-  'OUTER'=>'sheep leather 100%'
+  'm1.jpg',
+  'm2.jpg',
+  'm3.jpg',
+  'm4.jpg',
   ]);
 ?>
