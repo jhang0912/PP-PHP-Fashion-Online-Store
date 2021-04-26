@@ -1,39 +1,47 @@
+<?php
+if ($_GET['page'] == 'women') {
+  $collection = $wCollection->call_q("SELECT * FROM `Fashion_collection_women` ORDER BY `sold` DESC LIMIT 0,4");
+} else {
+  $collection = $mCollection->call_q("SELECT * FROM `Fashion_collection_men` ORDER BY `sold` DESC LIMIT 0,4");
+  $_GET['page'] = 'men';
+}
+?>
 <div class="itemRankShow uk-container d-flex justify-content-center align-items-center p-0">
   <?php
-  for ($i = 1; $i <= 5; $i++) {
+  foreach ($collection as $key => $value) {
   ?>
-    <div class="itemRank-card d-none d-md-flex flex-wrap justify-content-center align-items-center border overflow-hidden <?= ($i != 1) ? 'ms-3' : ''; ?> <?= ($i != 5) ? 'me-3' : ''; ?>" data-index="<?= $i ?>">
-      <a href="">
+    <div class="itemRank-card d-none d-md-flex flex-wrap justify-content-center align-items-center border overflow-hidden <?= ($key != 0) ? 'ms-3' : ''; ?> <?= ($key != 3) ? 'me-3' : ''; ?>" data-index="<?= $key ?>">
+      <a href="" class="text-decoration-none text-dark">
         <div class="uk-inline-clip uk-transition-toggle" tabindex="0">
-          <img src="./img/itemsRanking/<?= $i ?>.jpg">
-          <img class="uk-transition-scale-up uk-position-cover" src="./img/itemsRanking/<?= $i ?>_back.jpg">
+          <img class="mb-2" src="./img/collection/<?= $_GET['page'] ?>/<?= $value['category'] ?>/<?= unserialize($value['img'])[0] ?>">
+          <img class="uk-transition-scale-up uk-position-cover" src="./img/collection/<?= $_GET['page'] ?>/<?= $value['category'] ?>/<?= unserialize($value['img'])[1] ?>">
         </div>
-        <img class="rankP" src="img/itemsRanking/rank<?= $i ?>.png" alt="">
+        <img class="rankP" src="img/itemsRanking/rank<?= $key ?>.png" alt="">
+        <div class="h6 col-12 p-1"><?= $value['name'] ?></div>
+        <div class="h6 col-12 p-1"><?= $value['category'] ?></div>
+        <div class="h6 col-12 p-1">$<?= $value['price'] ?></div>
       </a>
-      <div class="h3 col-12 ms-5">title</div>
-      <div class="h5 col-12 ms-5">name</div>
-      <div class="h5 col-12 ms-5">price</div>
     </div>
   <?php
   }
   ?>
   <?php
-  for ($i = 1; $i <= 2; $i++) {
+  if ($_GET['page'] == 'women') {
+    $collection = $wCollection->call_q("SELECT * FROM `Fashion_collection_women` ORDER BY `sold` DESC LIMIT 0,2");
+  } else {
+    $collection = $mCollection->call_q("SELECT * FROM `Fashion_collection_men` ORDER BY `sold` DESC LIMIT 0,2");
+    $_GET['page'] = 'men';
+  }
+
+  foreach ($collection as $key => $value) {
   ?>
-    <div class="itemRank-card d-flex d-md-none flex-wrap justify-content-center align-items-center border overflow-hidden <?= ($i != 1) ? 'ms-3' : ''; ?> <?= ($i != 2) ? 'me-3' : ''; ?>" data-index="<?= $i ?>">
-      <a href="">
-        <img src="./img/itemsRanking/<?= $i ?>.jpg">
-        <?php
-        if ($i < 4) {
-        ?>
-          <img class="rankP" src="img/itemsRanking/rank<?= $i ?>.png" alt="">
-        <?php
-        }
-        ?>
+    <div class="itemRank-card d-flex d-md-none flex-wrap justify-content-center align-items-center border overflow-hidden <?= ($key != 0) ? 'ms-3' : ''; ?> <?= ($key != 1) ? 'me-3' : ''; ?>" data-index="<?= $key ?>">
+      <a href="" class="text-decoration-none text-dark">
+        <img src="./img/collection/<?= $_GET['page'] ?>/<?= $value['category'] ?>/<?= unserialize($value['img'])[0] ?>">
+        <img class="rankP" src="img/itemsRanking/rank<?= $key ?>.png" alt="">
+        <div class="h6 col-12 p-1"><?= $value['category'] ?></div>
+        <div class="h6 col-12 p-1">$<?= $value['price'] ?></div>
       </a>
-      <div class="h3 col-12 ms-5">title</div>
-      <div class="h5 col-12 ms-5">name</div>
-      <div class="h5 col-12 ms-5">price</div>
     </div>
   <?php
   }

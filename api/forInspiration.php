@@ -25,9 +25,9 @@ foreach ($Rand as $key => $value) {
   ?>
     <div class="for-card d-flex flex-wrap justify-content-center align-items-center border overflow-hidden ms-3 me-3">
       <a href="" class="mb-2"><img src="./img/collection/<?= $_GET['page'] ?>/<?= $value2['category'] ?>/<?= unserialize($value2['img'])[0] ?>"></a>
-      <div class="h6 col-12 ms-3 mb-3"><?= $value2['name'] ?></div>
-      <div class="h6 col-12 ms-3 mb-3"><?= $value2['category'] ?></div>
-      <div class="h6 col-12 ms-3">$<?= $value2['price'] ?></div>
+      <div class="h6 col-12 p-1"><?= $value2['name'] ?></div>
+      <div class="h6 col-12 p-1"><?= $value2['category'] ?></div>
+      <div class="h6 col-12 p-1">$<?= $value2['price'] ?></div>
     </div>
   <?php
   }
