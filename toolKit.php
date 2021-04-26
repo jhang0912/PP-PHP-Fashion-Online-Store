@@ -299,3 +299,11 @@ $genderC = ($_GET['page'] == 'women') ? 'womenCollection' : 'menCollection';
 $genderS = ($_GET['page'] == 'women') ? 'womenShoes' : 'menShoes';
 $genderSP =($_GET['page'] == 'women') ? 'womenSpecialPrice' : 'menSpecialPrice';
 $genderJ = ($_GET['page'] == 'women') ? 'womenJoinLife' : 'menJoinLife';
+
+/* 辨別目前的頁面性別 */
+if ($_GET['page'] == 'women') {
+  $collection = $wCollection->call_all();
+} else {
+  $collection = $mCollection->call_all();
+  $_GET['page']='men';
+}

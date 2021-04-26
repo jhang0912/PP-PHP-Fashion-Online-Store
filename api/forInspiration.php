@@ -1,13 +1,6 @@
 <?php
 include_once "../toolKit.php";
 
-if ($_GET['page'] == 'women') {
-  $collection = $wCollection->call_all();
-} else {
-  $collection = $mCollection->call_all();
-  $_GET['page']='men';
-}
-
 $Rand = array(); //定義為陣列
 $count = 6; //共產生幾筆
 for ($i = 1; $i <= $count; $i++) {
