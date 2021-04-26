@@ -12,7 +12,7 @@ $img = unserialize($newIn['img']);
       </div>
     </a>
     <div class="new-card-content h3 text-white">
-      <div class="new-card-title h1 text-white"><?= $_GET['page'] ?>'s Life Style</div>
+      <div class="new-card-title h1 text-white"><?= ($_GET['page'] == 'women') ? 'Women' : 'Men' ?>'s Life Style</div>
       <i class="newcard-arrowR fas fa-arrow-right h4 m-0 animate__animated animate__infinite"></i>
     </div>
   </div>
