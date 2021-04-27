@@ -1,6 +1,13 @@
 <?php
 include_once "../toolKit.php";
 
+if ($_GET['page'] == 'women') {
+  $collection = $wCollection->call_all(['sale' => 0]);
+} else {
+  $collection = $mCollection->call_all(['sale' => 0]);
+  $_GET['page'] = 'men';
+}
+
 $Rand = array(); //定義為陣列
 $count = 6; //共產生幾筆
 for ($i = 1; $i <= $count; $i++) {
@@ -23,11 +30,11 @@ foreach ($Rand as $key => $value) {
   <?php
   foreach ($newCollection as $key2 => $value2) {
   ?>
-    <div class="for-card d-flex flex-wrap justify-content-center align-items-center border overflow-hidden ms-3 me-3">
+    <div class="for-card d-flex flex-wrap justify-content-start align-items-center border overflow-hidden ms-3 me-3">
       <a href="" class="mb-2"><img src="./img/collection/<?= $_GET['page'] ?>/<?= $value2['category'] ?>/<?= unserialize($value2['img'])[0] ?>"></a>
-      <div class="h6 col-12 p-1"><?= $value2['name'] ?></div>
-      <div class="h6 col-12 p-1"><?= $value2['category'] ?></div>
-      <div class="h6 col-12 p-1">$<?= $value2['price'] ?></div>
+      <div class="col-12 h6 p-1"><?= $value2['name'] ?></div>
+      <div class="col-12 h6 p-1"><?= $value2['category'] ?></div>
+      <div class="col-12 h6 p-1">$<?= $value2['price'] ?></div>
     </div>
   <?php
   }

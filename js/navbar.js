@@ -55,28 +55,30 @@ let genderClick = url.searchParams.get('page');
 let mouseY, ndSortSt;
 
 $('.sort>div>a').on('mouseover', function () {
-  let next = $(this).next()
-  let nextId = $(next).attr('id')
 
-  $('.ndSort').fadeIn(400, () => {
+  let next = $(this).next();
+  let nextId = $(next).attr('id');
+
+  $('.ndSort').fadeIn(() => {
     if (nextId !== ndSortSt) {
-      $('.ndSortCon').fadeOut(400);
+      $('.ndSortCon').hide();
     }
   });
 
-  setTimeout(function () {
-    if (genderClick == 'home' || genderClick == null) {
-      genderClick = 'men';
-    } else {
-      genderClicked = url.searchParams.get('page');
-    }
-    //產生前端元件
-    $.get('./api/ndSort.php', { genderClick, nextId }, function (res) {
-      $('.ndSortCon').html(res)
-    })
-    $('.ndSortCon').fadeIn(400)
-  }, 400)
+  if (genderClick == 'home' || genderClick == null) {
+    genderClick = 'men';
+  } else {
+    genderClicked = url.searchParams.get('page');
+  }
+  //產生前端元件
+  $.get('./api/ndSort.php', { genderClick, nextId }, function (res) {
+    $('.ndSortCon').html(res);
+  })
+
+  $('.ndSortCon').show();
   ndSortSt = nextId;
+
+
 })
 
 $("html").mousemove(function (e) {
@@ -87,10 +89,10 @@ $("html").mousemove(function (e) {
   }
 })
 
-  //畫面重整時將rwdBar滑入
-  $('.rwdBar').css({
-    left: '-85%'
-  })
+//畫面重整時將rwdBar滑入
+$('.rwdBar').css({
+  left: '-85%'
+})
 
 
 /* ready */
@@ -145,9 +147,9 @@ $(document).ready(function () {
   $('.rwdBar-women').hide()
   $('#sort-women').hide()
 
-  $('.rwdBar-gender').on('click',function(){
+  $('.rwdBar-gender').on('click', function () {
     let target = $(this)
-    let targetB =$(this).siblings()
+    let targetB = $(this).siblings()
     let gender = $(this).attr('data-gender')
 
     $(target).css({
@@ -157,18 +159,18 @@ $(document).ready(function () {
     $(targetB).css({
       border: 'none',
     })
-    
-    $('.rwdBar-'+gender).siblings().fadeOut(300,()=>{
-      $('.rwdBar-'+gender).fadeIn(300)
+
+    $('.rwdBar-' + gender).siblings().fadeOut(300, () => {
+      $('.rwdBar-' + gender).fadeIn(300)
     })
 
-    if(gender=='men'){
-      $('#sort-women').fadeOut(300,()=>{
-          $('#sort-'+gender).fadeIn(300);
+    if (gender == 'men') {
+      $('#sort-women').fadeOut(300, () => {
+        $('#sort-' + gender).fadeIn(300);
       })
-    }else{
-      $('#sort-men').fadeOut(300,()=>{
-          $('#sort-'+gender).fadeIn(300);
+    } else {
+      $('#sort-men').fadeOut(300, () => {
+        $('#sort-' + gender).fadeIn(300);
       })
 
     }
