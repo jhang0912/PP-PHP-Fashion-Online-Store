@@ -52,40 +52,34 @@ $('.sort>div>a').on('mouseout', function () {
 
 /* sort fadeIn/fadeOut */
 let genderClick = url.searchParams.get('page');
-let mouseY, ndSortSt;
+let mouseY;
 
 $('.sort>div>a').on('mouseover', function () {
+    let next = $(this).next();
+    let nextId = $(next).attr('id');
 
-  let next = $(this).next();
-  let nextId = $(next).attr('id');
+    $('.ndSort').show();
 
-  $('.ndSort').fadeIn(() => {
-    if (nextId !== ndSortSt) {
-      $('.ndSortCon').hide();
+    if (genderClick == 'home' || genderClick == null) {
+      genderClick = 'men';
+    } else {
+      genderClicked = url.searchParams.get('page');
     }
-  });
+    //產生前端元件
+    $.get('./api/ndSort.php', { genderClick, nextId }, function (res) {
+      $('.ndSortCon').html(res);
+    })
 
-  if (genderClick == 'home' || genderClick == null) {
-    genderClick = 'men';
-  } else {
-    genderClicked = url.searchParams.get('page');
-  }
-  //產生前端元件
-  $.get('./api/ndSort.php', { genderClick, nextId }, function (res) {
-    $('.ndSortCon').html(res);
-  })
-
-  $('.ndSortCon').show();
-  ndSortSt = nextId;
-
+    $('.ndSortCon').show();
 
 })
+
 
 $("html").mousemove(function (e) {
   mouseY = e.pageY;
   if (mouseY > 594.5 || mouseY < 79) {
-    $('.ndSort').fadeOut(500);
-    $('.ndSortCon').fadeOut(500);
+    $('.ndSort').hide();
+    $('.ndSortCon').hide();
   }
 })
 
