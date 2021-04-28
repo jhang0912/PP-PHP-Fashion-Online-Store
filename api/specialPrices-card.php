@@ -35,25 +35,28 @@ foreach ($Rand as $key => $value) {
           <img src="./img/collection/<?= $_GET['page'] ?>/<?= $value['category'] ?>/<?= unserialize($value['img'])[0] ?>">
           <img class="uk-transition-scale-up uk-position-cover" src="./img/collection/<?= $_GET['page'] ?>/<?= $value['category'] ?>/<?= unserialize($value['img'])[3] ?>">
         </div>
-        <div class="col-12 h6 p-1"><?=$value['name']?></div>
-        <div class="col-12 h6 p-1"><?=$value['category']?></div>
-        <span class="col-12 h6 p-1 text-decoration-line-through text-secondary">$<?=$value['price']?></span>
-        <span class="text-decoration-none text-danger">$<?=floor(($value['price']*$value['sale'])/100)?></span>
+        <div class="col-12 h6 p-1"><?= $value['name'] ?></div>
+        <div class="col-12 h6 p-1"><?= $value['category'] ?></div>
+        <span class="col-12 h6 p-1 text-decoration-line-through text-secondary">$<?= $value['price'] ?></span>
+        <span class="text-decoration-none text-danger">$<?= floor(($value['price'] * $value['sale']) / 100) ?></span>
       </a>
     </div>
   <?php
   }
   ?>
   <?php
-  for ($i = 2; $i <= 3; $i++) {
+  foreach ($newCollection as $key => $value) {
+    if ($key <= 1) {
   ?>
-    <div class="spec-card d-flex d-md-none flex-wrap justify-content-center align-items-center border overflow-hidden <?= ($i != 2) ? 'ms-3' : ''; ?> <?= ($i != 3) ? 'me-3' : ''; ?>" data-index="<?= $i ?>">
-      <a href=""><img src="./img/specialPrices/<?= $i ?>.jpg"></a>
-      <div class="col-12 h6 p-1">title</div>
-      <div class="col-12 h6 p-1">name</div>
-      <div class="col-12 h6 p-1 text-danger">price</div>
-    </div>
+      <div class="spec-card d-flex d-md-none flex-wrap justify-content-center align-items-center border overflow-hidden <?= ($key != 0) ? 'ms-3' : ''; ?> <?= ($key != 1) ? 'me-3' : ''; ?>" data-index="<?= $key ?>">
+        <a href="" class="text-decoration-none"><img src="./img/collection/<?= $_GET['page'] ?>/<?= $value['category'] ?>/<?= unserialize($value['img'])[0] ?>">
+        <div class="spec-c text-dark p-1"><?= $value['category'] ?></div>
+        <span class="spec-p text-decoration-line-through text-secondary p-1">$<?= $value['price'] ?></span>
+        <span class="spec-p text-decoration-none text-danger">$<?= floor(($value['price'] * $value['sale']) / 100) ?></span>
+      </a>
+      </div>
   <?php
+    }
   }
   ?>
 </div>

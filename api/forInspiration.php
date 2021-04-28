@@ -31,10 +31,11 @@ foreach ($Rand as $key => $value) {
   foreach ($newCollection as $key2 => $value2) {
   ?>
     <div class="for-card d-flex flex-wrap justify-content-start align-items-center border overflow-hidden ms-3 me-3">
-      <a href="" class="mb-2"><img src="./img/collection/<?= $_GET['page'] ?>/<?= $value2['category'] ?>/<?= unserialize($value2['img'])[0] ?>"></a>
-      <div class="col-12 h6 p-1"><?= $value2['name'] ?></div>
-      <div class="col-12 h6 p-1"><?= $value2['category'] ?></div>
-      <div class="col-12 h6 p-1">$<?= $value2['price'] ?></div>
+      <a href="" class="text-decoration-none text-dark"><img src="./img/collection/<?= $_GET['page'] ?>/<?= $value2['category'] ?>/<?= unserialize($value2['img'])[0] ?>">
+        <div class="col-12 h6 p-1"><?= $value2['name'] ?></div>
+        <div class="col-12 h6 p-1"><?= $value2['category'] ?></div>
+        <span class="p-1">$<?= $value2['price'] ?></span>
+      </a>
     </div>
   <?php
   }

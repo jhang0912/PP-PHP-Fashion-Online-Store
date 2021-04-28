@@ -1,43 +1,39 @@
-#Content .spec-title
+#Content .spec-n
 {
   font-size: 60px;
 }
-#Content .spec-name
+#Content .spec-c
 {
   font-size: 30px;
 }
-#Content .spec-price
+#Content .spec-p
 {
   font-size: 30px;
 }
 /* RWD */
 @media (min-width:576px) and (max-width:767px) 
 {
-  #Content .spec-title
-  {
-    font-size: 40px;
-  }
-  #Content .spec-name
+  #Content .spec-n
 {
-  font-size: 25px;
+  font-size: 16px;
 }
-#Content .spec-price
+  #Content .spec-c
+  {
+    font-size: 16px;
+  }
+#Content .spec-p
 {
-  font-size: 25px;
+  font-size: 16px;
 }
 }
 @media (min-width:0px) and (max-width:575px) 
 {
-  #Content .spec-title
+  #Content .spec-c
   {
-    font-size: 30px;
+    font-size: 10px;
   }
-  #Content .spec-name
+#Content .spec-p
 {
-  font-size: 20px;
-}
-#Content .spec-price
-{
-  font-size: 20px;
+  font-size: 10px;
 }
 }

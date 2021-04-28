@@ -13,3 +13,25 @@
   left: 0;
   width: 40px;
 }
+#Content .itemRank-c
+{
+  font-size: 16px;
+}
+#Content .itemRank-p
+{
+  font-size: 16px;
+}
+
+/* RWD */
+
+@media (min-width:0px) and (max-width:767px) 
+{
+  #Content .itemRank-c
+  {
+    font-size: 10px;
+  }
+  #Content .itemRank-p
+  {
+    font-size: 10px;
+  }
+}
