@@ -1,19 +1,19 @@
-#Content .newInShow
+#Content .themeShow
 {
   --animate-duration: 1.5s;
 }
-#Content .new-card
+#Content .theme-card
 {
   position: relative;
 }
-#Content .new-card-content
+#Content .theme-card-content
 {
   position: absolute;
   bottom: 2.5%;
   left: 10%;
   text-shadow: 1px 1px 2.5px gray;
 }
-#Content .new-card-title
+#Content .theme-card-title
 {
   font-family: 'Kanit', sans-serif;
   font-size: 30px;
@@ -21,30 +21,30 @@
 /* RWD */
 @media (min-width:576px) and (max-width:991px) 
 {
-  #Content .new-card
+  #Content .theme-card
   {
     margin-bottom: 16px;
   }
-  #Content .new-card-title
+  #Content .theme-card-title
   {
     font-size: 30px;
   }
-  #Content .new-shop-now
+  #Content .theme-shop-now
   {
     font-size: 8px;
   }
 }
 @media (min-width:0px) and (max-width:575px) 
 {
-  #Content .new-card
+  #Content .theme-card
   {
     margin-bottom: 16px;
   }
-  #Content .new-card-title
+  #Content .theme-card-title
   {
     font-size: 20px;
   }
-  #Content .new-shop-now
+  #Content .theme-shop-now
   {
     font-size: 4px;
   }

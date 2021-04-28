@@ -61,9 +61,9 @@ include_once "../toolKit.php";
   <i class="next fas fa-chevron-right h2 text-white m-0"></i>
 </div>
 
-<div class="newInShowCon bg-light mb-5 p-3">
-  <div class="title h2 text-center">New In</div>
-  <?php include "api/newShow.php" ?>
+<div class="themeCon bg-light mb-5 p-3">
+  <div class="title h2 text-center">Theme Activities</div>
+  <?php include "api/theme.php" ?>
 </div>
 
 <div class="forInspirationCon uk-container uk-container-large bg-light shadow mb-5 p-3">

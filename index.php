@@ -28,7 +28,7 @@
   <!-- css -->
   <link rel="stylesheet" href="css/index_navbar.css">
   <link rel="stylesheet" href="css/home_slick.css">
-  <link rel="stylesheet" href="css/home_newInShow.css">
+  <link rel="stylesheet" href="css/home_theme.css">
   <link rel="stylesheet" href="css/home_forInspirationCon.css">
   <link rel="stylesheet" href="css/home_itemsRanking.css">
   <link rel="stylesheet" href="css/home_collection.css">
