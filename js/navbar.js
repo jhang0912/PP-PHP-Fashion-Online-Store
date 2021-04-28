@@ -55,31 +55,30 @@ let genderClick = url.searchParams.get('page');
 let mouseY;
 
 $('.sort>div>a').on('mouseover', function () {
-    let next = $(this).next();
-    let nextId = $(next).attr('id');
+  let next = $(this).next();
+  let nextId = $(next).attr('id');
 
-    $('.ndSort').show();
+  if (genderClick == 'home' || genderClick == null) {
+    genderClick = 'men';
+  } else {
+    genderClicked = 'women'
+  }
+  //產生前端元件
+  $.get('./api/ndSort.php', { genderClick, nextId }, function (res) {
+    $('.ndSort').html(res);
+  })
 
-    if (genderClick == 'home' || genderClick == null) {
-      genderClick = 'men';
-    } else {
-      genderClicked = url.searchParams.get('page');
-    }
-    //產生前端元件
-    $.get('./api/ndSort.php', { genderClick, nextId }, function (res) {
-      $('.ndSortCon').html(res);
-    })
-
-    $('.ndSortCon').show();
+  $('.ndSort').show()
+  $('.ndSortCon').show()
 
 })
 
 
 $("html").mousemove(function (e) {
   mouseY = e.pageY;
-  if (mouseY > 594.5 || mouseY < 79) {
-    $('.ndSort').hide();
-    $('.ndSortCon').hide();
+  if ((mouseY > 594.5 || mouseY < 79) && $('.ndSortCon').css('display') == 'block') {
+      $('.ndSort').hide();
+      $(".ndSortCon").remove()
   }
 })
 

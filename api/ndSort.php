@@ -86,7 +86,9 @@ $joinLife =
       'Collection'
     ]
   ];
-
+?>
+<div class="ndSortCon flex-wrap justify-content-center align-items-center col-12 ps-5 pe-5">
+<?php
 foreach (${$_GET['nextId']}[$_GET['genderClick']] as $key => $value) {
 
   ${$value} = new getUrl2($_GET['nextId'], $value);
@@ -95,3 +97,4 @@ foreach (${$_GET['nextId']}[$_GET['genderClick']] as $key => $value) {
 <?php
 }
 ?>
+</div>

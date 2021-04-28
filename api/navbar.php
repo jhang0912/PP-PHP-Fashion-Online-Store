@@ -191,5 +191,4 @@ $section = [
 </div>
 
 <div class="ndSort col-12">
-  <div class="ndSortCon flex-wrap justify-content-center align-items-center col-12 ps-5 pe-5"></div>
 </div>
