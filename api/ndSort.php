@@ -6,14 +6,12 @@ $newIn =
     'men' => [
       'This Week',
       'collection',
-      'Shoes',
-      'All New Arrivals'
+      'Shoes'
     ],
     'women' => [
       'This Week',
       'collection',
-      'Shoes',
-      'All New Arrivals'
+      'Shoes'
     ],
   ];
 
@@ -63,16 +61,16 @@ $specialPrices =
   [
     'men' => [
       'All',
-      'Shirt & POLO & T-Shirt',
+      'Shirt/POLO/T-Shirt',
       'Trousers',
-      'Jackets & Blazers',
+      'Jackets/Blazers',
       'Shoes'
     ],
     'women' => [
       'All',
-      'Shirt & POLO & T-Shirt',
+      'Shirt/POLO/T-Shirt',
       'Trousers',
-      'Jackets & Blazers',
+      'Jackets/Blazers',
       'Shoes'
     ]
   ];

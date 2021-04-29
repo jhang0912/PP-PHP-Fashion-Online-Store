@@ -46,19 +46,15 @@ $section = [
     <div class="men m-3">
       <a href="?page=men" title="男士">
         MEN
-
         <div id="menLine"></div>
       </a>
     </div>
 
     <div class="women m-3">
-      <div class="womenCon">
         <a href="?page=women" title="女士">
           WOMEN
-
           <div id="womenLine"></div>
         </a>
-      </div>
     </div>
   </div>
 

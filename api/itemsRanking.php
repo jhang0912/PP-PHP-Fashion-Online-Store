@@ -22,7 +22,7 @@ if ($_GET['page'] == 'women') {
         <?php
         if ($value['sale'] == '0') {/* 有特價的話就顯示出來 */
         ?>
-          <span class="p-1">$<?= $value['price'] ?></span>
+          <span class="itemRank-p p-1">$<?= $value['price'] ?></span>
         <?php
         } else {
         ?>
@@ -54,7 +54,7 @@ if ($_GET['page'] == 'women') {
         <?php
         if ($value['sale'] == '0') {/* 有特價的話就顯示出來 */
         ?>
-          <div class="col-12 h6 p-1">$<?= $value['price'] ?></div>
+          <span class="itemRank-p p-1">$<?= $value['price'] ?></span>
         <?php
         } else {
         ?>

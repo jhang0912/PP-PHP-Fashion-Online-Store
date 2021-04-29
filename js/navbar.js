@@ -57,28 +57,26 @@ let mouseY;
 $('.sort>div>a').on('mouseover', function () {
   let next = $(this).next();
   let nextId = $(next).attr('id');
-
+  console.log(nextId)
   if (genderClick == 'home' || genderClick == null) {
     genderClick = 'men';
   } else {
-    genderClicked = 'women'
+    genderClick = url.searchParams.get('page');
   }
   //產生前端元件
   $.get('./api/ndSort.php', { genderClick, nextId }, function (res) {
     $('.ndSort').html(res);
   })
-
-  $('.ndSort').show()
-  $('.ndSortCon').show()
-
+  $('.ndSortCon').show();
+  $('.ndSort').show();
 })
 
 
 $("html").mousemove(function (e) {
   mouseY = e.pageY;
-  if ((mouseY > 594.5 || mouseY < 79) && $('.ndSortCon').css('display') == 'block') {
-      $('.ndSort').hide();
-      $(".ndSortCon").remove()
+  if ((mouseY > 594.5 || mouseY < 79)) {
+    $('.ndSort').hide();
+    $(".ndSortCon").hide();
   }
 })
 
