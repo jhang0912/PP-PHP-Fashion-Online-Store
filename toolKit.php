@@ -217,8 +217,8 @@ class getUrl
 
 class getUrl2
 {
-  private $ndSort;
-  private $mainSort;
+  protected $ndSort;
+  protected $mainSort;
 
   public function __construct($mainSort, $ndSort)
   {
@@ -237,29 +237,139 @@ class getUrl2
   }
 }
 
+/* 讀取主分類的資料庫內容 */
+
+class getMSC extends getUrl2
+{
+  private $gender;
+  public function __construct($mainSort, $ndSort)
+  {
+    $this->mainSort = $mainSort;
+    $this->ndSort = $ndSort;
+    $this->gender = (empty($_GET['page'] || $_GET['page'] == 'home')) ? 'men' : $_GET['page'];
+  }
+
+  public function MSC()
+  {
+    if ($this->ndSort == '') {
+      switch ($this->mainSort) {
+        case 'newIn':
+          $Goods = new DB("Fashion_collection_$this->gender");
+          $max = $Goods->call_q("SELECT MAX(`no`) FROM `Fashion_collection_$this->gender`");
+          return $goods = $Goods->call_all(['no' => $max[0][0]], "order by `id` DESC");
+          break;
+        case 'specialPrices':
+          $Goods = new DB("Fashion_collection_$this->gender");
+          return $goods = $Goods->call_q("SELECT * FROM `Fashion_collection_$this->gender` WHERE `sale` != 0 ORDER BY `id` DESC");
+          break;
+        case 'shoes':
+          $Goods = new DB("Fashion_shoes_$this->gender");
+          return $goods = $Goods->call_q("SELECT * FROM `Fashion_shoes_$this->gender` ORDER BY `id` DESC");
+          break;
+        default:
+          $Goods = new DB("Fashion_collection_$this->gender");
+          return $goods = $Goods->call_all('', "order by `id` DESC");
+          break;
+      }
+    } else {
+      switch ($this->mainSort) {
+        case 'newIn': //NewIn
+          switch ($this->ndSort) {
+            case 'This Week':
+              # code...
+              break;
+            case 'collection':
+              $Goods = new DB("Fashion_collection_$this->gender");
+              $max = $Goods->call_q("SELECT MAX(`no`) FROM `Fashion_collection_$this->gender`");
+              return $goods = $Goods->call_all(['no' => $max[0][0]], "order by `id` DESC");
+              break;
+            case 'shoes':
+              $Goods = new DB("Fashion_shoes_$this->gender");
+              $max = $Goods->call_q("SELECT MAX(`no`) FROM `Fashion_shoes_$this->gender`");
+              return $goods = $Goods->call_all(['no' => $max[0][0]], "order by `id` DESC");
+              break;
+          }
+          break;
+
+
+        case 'collection': //Collection
+          $Goods = new DB("Fashion_collection_$this->gender");
+          return $goods = $Goods->call_all(['category' => $this->ndSort], "order by `id` DESC");
+          break;
+
+
+        case 'shoes': //Shoes
+          switch ($this->ndSort) {
+            case 'all':
+              $Goods = new DB("Fashion_shoes_$this->gender");
+              return $goods = $Goods->call_all('', "order by `id` DESC");
+              break;
+            default:
+              $Goods = new DB("Fashion_shoes_$this->gender");
+              return $goods = $Goods->call_all(['category' => $this->ndSort], "order by `id` DESC");
+              break;
+          }
+          break;
+
+
+        case 'specialPrices': //SpecialPrices
+          switch ($this->ndSort) {
+            case 'all':
+              $Goods = new DB("Fashion_collection_$this->gender");
+              return $goods = $Goods->call_q("SELECT * FROM `Fashion_collection_$this->gender` WHERE `sale` != 0 ORDER BY `id` DESC");
+              break;
+            case 'shirt/polo/T-shirt':
+              $Goods = new DB("Fashion_collection_$this->gender");
+              return $goods = $Goods->call_q("SELECT * FROM `Fashion_collection_$this->gender` WHERE (`category` = 'shirt' || `category` = 'polo' || `category` = 'T-shirt' ) && `sale` != 0 ORDER BY `id` DESC");
+              break;
+            case 'shirt/T-shirt':
+              $Goods = new DB("Fashion_collection_$this->gender");
+              return $goods = $Goods->call_q("SELECT * FROM `Fashion_collection_$this->gender` WHERE (`category` = 'shirt' || `category` = 'T-shirt' ) && `sale` != 0 ORDER BY `id` DESC");
+              break;
+            case 'jacket/blazer':
+              $Goods = new DB("Fashion_collection_$this->gender");
+              return $goods = $Goods->call_q("SELECT * FROM `Fashion_collection_$this->gender` WHERE (`category` = 'jacket' || `category` = 'blazer' ) && `sale` != 0 ORDER BY `id` DESC");
+              break;
+            case 'shoes':
+              $Goods = new DB("Fashion_shoes_$this->gender");
+              return $goods = $Goods->call_q("SELECT * FROM `Fashion_shoes_$this->gender` WHERE `sale` != 0 ORDER BY `id` DESC");
+              break;
+          }
+          break;
+
+
+        case 'joinLife': //JoinLife
+          $Goods = new DB("Fashion_collection_$this->gender");
+          return $goods = $Goods->call_all('', "order by `id` DESC");
+          break;
+      }
+    }
+  }
+}
+
 /* 在slick元件中分辨檔案是否為jpg或mp4並產生元件 */
 $men = $mSlick->call_all(['display' => '1']);
-$menNewIn = new getHTML('men',$men[0]['newIn']);
-$menCollection = new getHTML('men',$men[0]['collection']);
-$menShoes = new getHTML('men',$men[0]['shoes']);
-$menSpecialPrice = new getHTML('men',$men[0]['specialPrice']);
-$menJoinLife = new getHTML('men',$men[0]['joinLife']);
+$menNewIn = new getHTML('men', $men[0]['newIn']);
+$menCollection = new getHTML('men', $men[0]['collection']);
+$menShoes = new getHTML('men', $men[0]['shoes']);
+$menSpecialPrice = new getHTML('men', $men[0]['specialPrice']);
+$menJoinLife = new getHTML('men', $men[0]['joinLife']);
 
 $women = $wSlick->call_all(['display' => '1']);
-$womenNewIn = new getHTML('women',$women[0]['newIn']);
-$womenCollection = new getHTML('women',$women[0]['collection']);
-$womenShoes = new getHTML('women',$women[0]['shoes']);
-$womenSpecialPrice = new getHTML('women',$women[0]['specialPrice']);
-$womenJoinLife = new getHTML('women',$women[0]['joinLife']);
+$womenNewIn = new getHTML('women', $women[0]['newIn']);
+$womenCollection = new getHTML('women', $women[0]['collection']);
+$womenShoes = new getHTML('women', $women[0]['shoes']);
+$womenSpecialPrice = new getHTML('women', $women[0]['specialPrice']);
+$womenJoinLife = new getHTML('women', $women[0]['joinLife']);
 class getHTML
 {
   private $gender;
   private $extension;
   private $file;
 
-  public function __construct($gender,$file)
+  public function __construct($gender, $file)
   {
-    $this->gender=$gender;
+    $this->gender = $gender;
     $this->extension = pathinfo($file, PATHINFO_EXTENSION);
     $this->file = $file;
   }
@@ -297,7 +407,7 @@ class getHTML
 $genderN = ($_GET['page'] == 'women') ? 'womenNewIn' : 'menNewIn';
 $genderC = ($_GET['page'] == 'women') ? 'womenCollection' : 'menCollection';
 $genderS = ($_GET['page'] == 'women') ? 'womenShoes' : 'menShoes';
-$genderSP =($_GET['page'] == 'women') ? 'womenSpecialPrice' : 'menSpecialPrice';
+$genderSP = ($_GET['page'] == 'women') ? 'womenSpecialPrice' : 'menSpecialPrice';
 $genderJ = ($_GET['page'] == 'women') ? 'womenJoinLife' : 'menJoinLife';
 
 /* 辨別目前的頁面性別 */
@@ -305,5 +415,5 @@ if ($_GET['page'] == 'women') {
   $collection = $wCollection->call_all();
 } else {
   $collection = $mCollection->call_all();
-  $_GET['page']='men';
+  $_GET['page'] = 'men';
 }

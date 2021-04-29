@@ -2,7 +2,7 @@
 if
 (!empty($_GET['ndSort']) || !empty($_GET['mainSort']))
 {
-  include "api/items.php";
+  include "api/goods.php";
 }
 else
 {

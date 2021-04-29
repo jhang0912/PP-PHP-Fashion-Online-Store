@@ -6,82 +6,80 @@ $newIn =
     'men' => [
       'This Week',
       'collection',
-      'Shoes'
+      'shoes'
     ],
     'women' => [
       'This Week',
       'collection',
-      'Shoes'
+      'shoes'
     ],
   ];
 
 $collection =
   [
     'men' => [
-      'Jackets',
-      'Leather jackets',
-      'Blazers',
-      'Sweaters',
-      'Shirts',
-      'Cardigans',
-      'T-Shirts',
-      'Polos'
+      'jacket',
+      'leather jacket',
+      'blazer',
+      'sweater',
+      'shirt',
+      'cardigan',
+      'T-shirt',
+      'polo'
     ],
     'women' => [
-      'Jackets',
-      'Leather jackets',
-      'Blazers',
-      'Sweaters',
-      'Shirts',
-      'Cardigans',
-      'T-Shirts',
-      'Trousers'
+      'jacket',
+      'leather jacket',
+      'blazer',
+      'sweater',
+      'shirt',
+      'cardigan',
+      'T-shirt',
+      'trouser'
     ]
   ];
 
 $shoes =
   [
     'men' => [
-      'All',
-      'Sneakers',
-      'loafers',
-      'Smart Shoes',
-      'C-ONE Capsule'
+      'all',
+      'sneaker',
+      'loafer',
+      'smart shoes',
+      'C-ONE capsule'
     ],
     'women' => [
-      'All',
-      'Sneakers',
-      'Flat Shoes',
-      'Sandal',
-      'Boots'
+      'all',
+      'sneaker',
+      'flat shoes',
+      'sandal',
+      'boots'
     ],
   ];
 
 $specialPrices =
   [
     'men' => [
-      'All',
-      'Shirt/POLO/T-Shirt',
-      'Trousers',
-      'Jackets/Blazers',
-      'Shoes'
+      'all',
+      'shirt/polo/T-shirt',
+      'jacket/blazer',
+      'shoes'
     ],
     'women' => [
-      'All',
-      'Shirt/POLO/T-Shirt',
-      'Trousers',
-      'Jackets/Blazers',
-      'Shoes'
+      'all',
+      'shirt/T-shirt',
+      'jacket/blazer',
+      'shoes'
     ]
   ];
 
 $joinLife =
   [
     'men' => [
-      'Collection'
+      'collection'
     ],
     'women' => [
-      'Collection'
+      'collection'
     ]
   ];
 ?>

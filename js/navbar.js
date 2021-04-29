@@ -57,7 +57,7 @@ let mouseY;
 $('.mainSort').on('mouseover', function () {
   let nextId = $(this).next().attr('id');
 
-  if (genderClicked == 'home' || genderClicked == null) {
+  if (genderClicked == 'home' || genderClicked == 'men' || genderClicked == null) {
     genderClick = 'men';
   } else {
     genderClick = 'women';
@@ -67,9 +67,9 @@ $('.mainSort').on('mouseover', function () {
   $.get('./api/ndSort.php', { genderClick, nextId }, function (res) {
     $('.ndSort').html(res);
   })
-  setTimeout(function(){
+  setTimeout(function () {
     $('.ndSort').show();
-    },50)
+  }, 50)
 })
 
 
