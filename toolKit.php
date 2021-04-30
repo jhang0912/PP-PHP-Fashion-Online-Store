@@ -242,33 +242,41 @@ class getUrl2
 class getMSC extends getUrl2
 {
   private $gender;
-  public function __construct($mainSort, $ndSort)
+  private $sort;
+
+  public function __construct($mainSort, $ndSort, $sort)
   {
     $this->mainSort = $mainSort;
     $this->ndSort = $ndSort;
+    $this->sort = $sort;
     $this->gender = (empty($_GET['page'] || $_GET['page'] == 'home')) ? 'men' : $_GET['page'];
   }
 
-  public function MSC()
+  public function call_MSC()
+  {
+    return $this->MSC();
+  }
+
+  private function MSC()
   {
     if ($this->ndSort == '') {
       switch ($this->mainSort) {
         case 'newIn':
           $Goods = new DB("Fashion_collection_$this->gender");
           $max = $Goods->call_q("SELECT MAX(`no`) FROM `Fashion_collection_$this->gender`");
-          return $goods = $Goods->call_all(['no' => $max[0][0]], "order by `id` DESC");
+          return $goods = $Goods->call_all(['no' => $max[0][0]], "{$this->getSort()}");
           break;
         case 'specialPrices':
           $Goods = new DB("Fashion_collection_$this->gender");
-          return $goods = $Goods->call_q("SELECT * FROM `Fashion_collection_$this->gender` WHERE `sale` != 0 ORDER BY `id` DESC");
+          return $goods = $Goods->call_q("SELECT * FROM `Fashion_collection_$this->gender` WHERE `sale` != 0 {$this->getSort()}");
           break;
         case 'shoes':
           $Goods = new DB("Fashion_shoes_$this->gender");
-          return $goods = $Goods->call_q("SELECT * FROM `Fashion_shoes_$this->gender` ORDER BY `id` DESC");
+          return $goods = $Goods->call_q("SELECT * FROM `Fashion_shoes_$this->gender` {$this->getSort()}");
           break;
         default:
           $Goods = new DB("Fashion_collection_$this->gender");
-          return $goods = $Goods->call_all('', "order by `id` DESC");
+          return $goods = $Goods->call_all('', "{$this->getSort()}");
           break;
       }
     } else {
@@ -281,12 +289,12 @@ class getMSC extends getUrl2
             case 'collection':
               $Goods = new DB("Fashion_collection_$this->gender");
               $max = $Goods->call_q("SELECT MAX(`no`) FROM `Fashion_collection_$this->gender`");
-              return $goods = $Goods->call_all(['no' => $max[0][0]], "order by `id` DESC");
+              return $goods = $Goods->call_all(['no' => $max[0][0]], "{$this->getSort()}");
               break;
             case 'shoes':
               $Goods = new DB("Fashion_shoes_$this->gender");
               $max = $Goods->call_q("SELECT MAX(`no`) FROM `Fashion_shoes_$this->gender`");
-              return $goods = $Goods->call_all(['no' => $max[0][0]], "order by `id` DESC");
+              return $goods = $Goods->call_all(['no' => $max[0][0]], "{$this->getSort()}");
               break;
           }
           break;
@@ -294,7 +302,7 @@ class getMSC extends getUrl2
 
         case 'collection': //Collection
           $Goods = new DB("Fashion_collection_$this->gender");
-          return $goods = $Goods->call_all(['category' => $this->ndSort], "order by `id` DESC");
+          return $goods = $Goods->call_all(['category' => $this->ndSort], "{$this->getSort()}");
           break;
 
 
@@ -302,11 +310,11 @@ class getMSC extends getUrl2
           switch ($this->ndSort) {
             case 'all':
               $Goods = new DB("Fashion_shoes_$this->gender");
-              return $goods = $Goods->call_all('', "order by `id` DESC");
+              return $goods = $Goods->call_all('', "{$this->getSort()}");
               break;
             default:
               $Goods = new DB("Fashion_shoes_$this->gender");
-              return $goods = $Goods->call_all(['category' => $this->ndSort], "order by `id` DESC");
+              return $goods = $Goods->call_all(['category' => $this->ndSort], "{$this->getSort()}");
               break;
           }
           break;
@@ -316,23 +324,23 @@ class getMSC extends getUrl2
           switch ($this->ndSort) {
             case 'all':
               $Goods = new DB("Fashion_collection_$this->gender");
-              return $goods = $Goods->call_q("SELECT * FROM `Fashion_collection_$this->gender` WHERE `sale` != 0 ORDER BY `id` DESC");
+              return $goods = $Goods->call_q("SELECT * FROM `Fashion_collection_$this->gender` WHERE `sale` != 0 {$this->getSort()}");
               break;
             case 'shirt/polo/T-shirt':
               $Goods = new DB("Fashion_collection_$this->gender");
-              return $goods = $Goods->call_q("SELECT * FROM `Fashion_collection_$this->gender` WHERE (`category` = 'shirt' || `category` = 'polo' || `category` = 'T-shirt' ) && `sale` != 0 ORDER BY `id` DESC");
+              return $goods = $Goods->call_q("SELECT * FROM `Fashion_collection_$this->gender` WHERE (`category` = 'shirt' || `category` = 'polo' || `category` = 'T-shirt' ) && `sale` != 0 {$this->getSort()}");
               break;
             case 'shirt/T-shirt':
               $Goods = new DB("Fashion_collection_$this->gender");
-              return $goods = $Goods->call_q("SELECT * FROM `Fashion_collection_$this->gender` WHERE (`category` = 'shirt' || `category` = 'T-shirt' ) && `sale` != 0 ORDER BY `id` DESC");
+              return $goods = $Goods->call_q("SELECT * FROM `Fashion_collection_$this->gender` WHERE (`category` = 'shirt' || `category` = 'T-shirt' ) && `sale` != 0 {$this->getSort()}");
               break;
             case 'jacket/blazer':
               $Goods = new DB("Fashion_collection_$this->gender");
-              return $goods = $Goods->call_q("SELECT * FROM `Fashion_collection_$this->gender` WHERE (`category` = 'jacket' || `category` = 'blazer' ) && `sale` != 0 ORDER BY `id` DESC");
+              return $goods = $Goods->call_q("SELECT * FROM `Fashion_collection_$this->gender` WHERE (`category` = 'jacket' || `category` = 'blazer' ) && `sale` != 0 {$this->getSort()}");
               break;
             case 'shoes':
               $Goods = new DB("Fashion_shoes_$this->gender");
-              return $goods = $Goods->call_q("SELECT * FROM `Fashion_shoes_$this->gender` WHERE `sale` != 0 ORDER BY `id` DESC");
+              return $goods = $Goods->call_q("SELECT * FROM `Fashion_shoes_$this->gender` WHERE `sale` != 0 {$this->getSort()}");
               break;
           }
           break;
@@ -340,12 +348,33 @@ class getMSC extends getUrl2
 
         case 'joinLife': //JoinLife
           $Goods = new DB("Fashion_collection_$this->gender");
-          return $goods = $Goods->call_all('', "order by `id` DESC");
+          return $goods = $Goods->call_all('',"{$this->getSort()}");
           break;
       }
     }
   }
+
+  private function getSort()
+  {
+    switch ($this->sort) {
+      case '':
+      case 'Newest':
+        return " ORDER BY `id` DESC";
+        break;
+      case 'Most Sold':
+        return " ORDER BY `sold` DESC";
+        break;
+
+      case 'Price(high-low)':
+        return " ORDER BY `price` DESC";
+        break;
+      case 'Price(low-high)':
+        return " ORDER BY `price` ASC";
+        break;
+    }
+  }
 }
+
 
 /* 在slick元件中分辨檔案是否為jpg或mp4並產生元件 */
 $men = $mSlick->call_all(['display' => '1']);

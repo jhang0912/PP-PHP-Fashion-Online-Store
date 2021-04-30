@@ -65,6 +65,7 @@
     <script src="js/forInspiration.js"></script>
     <script src="js/collection.js"></script>
     <script src="js/footer.js"></script>
+    <script src="js/goods.js"></script>
   </section>
 </body>
 

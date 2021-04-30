@@ -4,7 +4,8 @@ new WOW().init();
 let getUrlString = location.href;
 let url = new URL(getUrlString);
 let genderClicked = url.searchParams.get('page');/* 確定目前的性別分類是哪一個 */
-
+let mainSortClicked = url.searchParams.get('mainSort');/* 確定目前的主分類是哪一個 */
+let ndSortClicked = url.searchParams.get('ndSort');/* 確定目前的次分類是哪一個 */
 // 性別分類
 $('.women').on('mouseover', function () {
   if (genderClicked != "women") {
@@ -62,7 +63,6 @@ $('.mainSort').on('mouseover', function () {
   } else {
     genderClick = 'women';
   }
-  console.log(genderClick)
   //產生前端元件
   $.get('./api/ndSort.php', { genderClick, nextId }, function (res) {
     $('.ndSort').html(res);
