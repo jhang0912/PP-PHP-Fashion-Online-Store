@@ -259,7 +259,7 @@ class getMSC extends getUrl2
 
   private function MSC()
   {
-    if ($this->ndSort == '') {
+    if ($this->ndSort == '' || $this->ndSort == null) {
       switch ($this->mainSort) {
         case 'newIn':
           $Goods = new DB("Fashion_collection_$this->gender");
@@ -348,7 +348,7 @@ class getMSC extends getUrl2
 
         case 'joinLife': //JoinLife
           $Goods = new DB("Fashion_collection_$this->gender");
-          return $goods = $Goods->call_all('',"{$this->getSort()}");
+          return $goods = $Goods->call_all('', "{$this->getSort()}");
           break;
       }
     }

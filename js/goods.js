@@ -1,6 +1,16 @@
-$('.uk-nav>li>a').on('mouseover',function(){
-  console.log($(this).text())
-  console.log(genderClicked,mainSortClicked,ndSortClicked)
 
-  // $('.specShow').fadeOut(500)
+  let text = '';
+  $.get('./api/goods2.php', { text, mainSortClicked, ndSortClicked }, function (res) {
+    $('.goodsShow').html(res);
+  })
+
+
+$('.uk-nav>li>a').on('click', function () {
+  let text = $(this).text();
+  $.get('./api/goods2.php', { text, mainSortClicked, ndSortClicked }, function (res) {
+      $('.goodsShow').html(res);
+  })
 })
+
+
+
