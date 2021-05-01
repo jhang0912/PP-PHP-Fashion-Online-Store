@@ -36,6 +36,7 @@
   <link rel="stylesheet" href="css/home_shoes.css">
   <link rel="stylesheet" href="css/home_specialPrices.css">
   <link rel="stylesheet" href="css/index_footer.css">
+  <link rel="stylesheet" href="css/goods.css">
   <!-- title -->
   <title>Fashion Online Store</title>
 </head>

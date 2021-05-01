@@ -6,5 +6,5 @@ if
 }
 else
 {
-  include "./home.php";
+  include "api/home.php";
 }

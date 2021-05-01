@@ -159,7 +159,7 @@ $section = [
   </div>
 </div>
 
-<div class="sort container-fluid d-none d-md-flex justify-content-center align-items-center ps-4 pe-4">
+<div class="sort container-fluid d-none d-md-flex justify-content-center align-items-center border-bottom ps-4 pe-4">
   <div class="newIn m-2 ms-3 me-3">
     <a href="<?= $NewIn->getMainUrl() ?>" class="mainSort text-dark">NEW IN</a>
     <div id="newIn" class="sortLine"></div>

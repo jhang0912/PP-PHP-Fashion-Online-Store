@@ -244,12 +244,12 @@ class getMSC extends getUrl2
   private $gender;
   private $sort;
 
-  public function __construct($mainSort, $ndSort, $sort)
+  public function __construct($mainSort, $ndSort, $sort,$gender)
   {
     $this->mainSort = $mainSort;
     $this->ndSort = $ndSort;
     $this->sort = $sort;
-    $this->gender = (empty($_GET['page'] || $_GET['page'] == 'home')) ? 'men' : $_GET['page'];
+    $this->gender = $gender;
   }
 
   public function call_MSC()
