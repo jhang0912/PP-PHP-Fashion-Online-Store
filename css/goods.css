@@ -1,3 +1,11 @@
+#Content .goodsCon
+{
+  justify-content: space-between;
+}
+#Content .leftMainSort
+{
+  width: 300px;
+}
 #Content .leftNdSort
 {
   color: rgb(126, 135, 141);
@@ -6,4 +14,22 @@
 #Content .leftNdSort:hover
 {
   color: rgb(25, 25, 25);
+}
+#Content .goodsShow
+{
+  width: 84%;
+  padding-left: 8px;
+}
+
+/* RWD */
+@media (min-width: 0px) and (max-width: 767px) {
+  #Content .goodsCon
+  {
+    justify-content: center;
+  }
+  #Content .goodsShow
+  {
+    width: 95%;
+    padding-left: 0;
+  }
 }

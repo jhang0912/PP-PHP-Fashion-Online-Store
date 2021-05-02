@@ -1,37 +1,87 @@
 <?php
 $section = [
-  'New In' => [
-    'This Week',
-    'All New Arrivals',
-    'Collection',
-    'Shoes'
+  'newIn' =>
+  [
+    'men' => [
+      'all',
+      'collection',
+      'shoes'
+    ],
+    'women' => [
+      'all',
+      'collection',
+      'shoes'
+    ],
   ],
-  'Collection' => [
-    'Jackets',
-    'Leather jackets',
-    'Blazers',
-    'Sweaters',
-    'Shirts',
-    'Cardigans',
-    'T-Shirts',
-    'Polos',
+
+  'collection' =>
+  [
+    'men' => [
+      'all',
+      'jacket',
+      'leather jacket',
+      'blazer',
+      'sweater',
+      'shirt',
+      'cardigan',
+      'T-shirt',
+      'polo'
+    ],
+    'women' => [
+      'all',
+      'jacket',
+      'leather jacket',
+      'blazer',
+      'sweater',
+      'shirt',
+      'cardigan',
+      'T-shirt',
+      'trouser'
+    ]
   ],
-  'Shoes' => [
-    'All',
-    'Sneakers',
-    'loafers',
-    'Smart Shoes',
-    'C-ONE Capsule'
+
+  'shoes' =>
+  [
+    'men' => [
+      'all',
+      'sneaker',
+      'loafer',
+      'smart shoes',
+      'C-ONE capsule'
+    ],
+    'women' => [
+      'all',
+      'sneaker',
+      'flat shoes',
+      'sandal',
+      'boots'
+    ],
   ],
-  'Special Prices' => [
-    'All',
-    'Shirt & POLO & T-Shirt',
-    'Trousers',
-    'Jackets & Blazers',
-    'Shoes'
+
+  'specialPrices' =>
+  [
+    'men' => [
+      'all',
+      'shirt/polo/T-shirt',
+      'jacket/blazer',
+      'shoes'
+    ],
+    'women' => [
+      'all',
+      'shirt/T-shirt',
+      'jacket/blazer',
+      'shoes'
+    ]
   ],
-  'Join Life' => [
-    'collection'
+
+  'joinLife' =>
+  [
+    'men' => [
+      'collection'
+    ],
+    'women' => [
+      'collection'
+    ]
   ]
 ];
 ?>
@@ -51,10 +101,10 @@ $section = [
     </div>
 
     <div class="women m-3">
-        <a href="?page=women" title="女士">
-          WOMEN
-          <div id="womenLine"></div>
-        </a>
+      <a href="?page=women" title="女士">
+        WOMEN
+        <div id="womenLine"></div>
+      </a>
     </div>
   </div>
 
@@ -106,15 +156,16 @@ $section = [
     foreach ($section as $key => $value) {
     ?>
       <div class="accordion-item border-bottom border-light mb-3">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse<?= preg_replace("/\s(?=)/", "", $key); ?>" aria-expanded="false" aria-controls="flush-collapse<?= preg_replace("/\s(?=)/", "", $key); ?>">
+        <button class="accordion-button collapsed <?=($key=='specialPrices')?'text-danger':'';?>" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse<?= preg_replace("/\s(?=)/", "", $key); ?>" aria-expanded="false" aria-controls="flush-collapse<?= preg_replace("/\s(?=)/", "", $key); ?>">
           <?= $key ?>
         </button>
         <div id="flush-collapse<?= preg_replace("/\s(?=)/", "", $key); ?>" class="accordion-collapse collapse" aria-labelledby="flush-heading<?= preg_replace("/\s(?=)/", "", $key); ?>" data-bs-parent="#accordionFlushExample">
           <div class="accordion-body">
             <?php
-            foreach ($value as $key2 => $value2) {
+            foreach ($value['men'] as $key2 => $value2) {
+              ${$value2} = new getUrl2($key, $value2);
             ?>
-              <a href="" class="d-block text-decoration-none mb-3">
+              <a href="?page=men<?= ${$value2}->getNdUrl() ?>" class="d-block text-decoration-none mb-3">
                 <div class="rwdBarSort-child container-fluid h6 text-dark p-2"><?= $value2 ?></div>
               </a>
             <?php
@@ -136,15 +187,16 @@ $section = [
     foreach ($section as $key => $value) {
     ?>
       <div class="accordion-item border-bottom border-light mb-3">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse<?= preg_replace("/\s(?=)/", "", $key); ?>" aria-expanded="false" aria-controls="flush-collapse<?= preg_replace("/\s(?=)/", "", $key); ?>">
+        <button class="accordion-button collapsed <?=($key=='specialPrices')?'text-danger':'';?>" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse<?= preg_replace("/\s(?=)/", "", $key); ?>" aria-expanded="false" aria-controls="flush-collapse<?= preg_replace("/\s(?=)/", "", $key); ?>">
           <?= $key ?>
         </button>
         <div id="flush-collapse<?= preg_replace("/\s(?=)/", "", $key); ?>" class="accordion-collapse collapse" aria-labelledby="flush-heading<?= preg_replace("/\s(?=)/", "", $key); ?>" data-bs-parent="#accordionFlushExample">
           <div class="accordion-body">
             <?php
-            foreach ($value as $key2 => $value2) {
+            foreach ($value['women'] as $key2 => $value2) {
+              ${$value2} = new getUrl2($key, $value2);
             ?>
-              <a href="" class="d-block text-decoration-none mb-3">
+              <a href="?page=women<?= ${$value2}->getNdUrl() ?>" class="d-block text-decoration-none mb-3">
                 <div class="rwdBarSort-child container-fluid h6 text-dark p-2"><?= $value2 ?></div>
               </a>
             <?php

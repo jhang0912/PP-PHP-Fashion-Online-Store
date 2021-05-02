@@ -244,7 +244,7 @@ class getMSC extends getUrl2
   private $gender;
   private $sort;
 
-  public function __construct($mainSort, $ndSort, $sort,$gender)
+  public function __construct($mainSort, $ndSort, $sort, $gender)
   {
     $this->mainSort = $mainSort;
     $this->ndSort = $ndSort;
@@ -262,13 +262,20 @@ class getMSC extends getUrl2
     if ($this->ndSort == '' || $this->ndSort == null) {
       switch ($this->mainSort) {
         case 'newIn':
-          $Goods = new DB("Fashion_collection_$this->gender");
-          $max = $Goods->call_q("SELECT MAX(`no`) FROM `Fashion_collection_$this->gender`");
-          return $goods = $Goods->call_all(['no' => $max[0][0]], "{$this->getSort()}");
+          $c_Goods = new DB("Fashion_collection_$this->gender");
+          $max1 = $c_Goods->call_q("SELECT MAX(`no`) FROM `Fashion_collection_$this->gender`");
+          $c_goods = $c_Goods->call_all(['no' => $max1[0][0]], "{$this->getSort()}");
+          $s_Goods = new DB("Fashion_shoes_$this->gender");
+          $max2 = $s_Goods->call_q("SELECT MAX(`no`) FROM `Fashion_shoes_$this->gender`");
+          $s_goods = $s_Goods->call_all(['no' => $max2[0][0]], "{$this->getSort()}");
+          return $goods = array_merge($c_goods, $s_goods);
           break;
         case 'specialPrices':
-          $Goods = new DB("Fashion_collection_$this->gender");
-          return $goods = $Goods->call_q("SELECT * FROM `Fashion_collection_$this->gender` WHERE `sale` != 0 {$this->getSort()}");
+          $cGoods = new DB("Fashion_collection_$this->gender");
+          $sGoods = new DB("Fashion_shoes_$this->gender");
+          $c_goods = $cGoods->call_q("SELECT * FROM `Fashion_collection_$this->gender` WHERE `sale` != 0 {$this->getSort()}");
+          $s_goods = $sGoods->call_q("SELECT * FROM `Fashion_shoes_$this->gender` WHERE `sale` != 0 {$this->getSort()}");
+          return $goods = array_merge($c_goods, $s_goods);
           break;
         case 'shoes':
           $Goods = new DB("Fashion_shoes_$this->gender");
@@ -283,8 +290,14 @@ class getMSC extends getUrl2
       switch ($this->mainSort) {
         case 'newIn': //NewIn
           switch ($this->ndSort) {
-            case 'This Week':
-              # code...
+            case 'all':
+              $c_Goods = new DB("Fashion_collection_$this->gender");
+              $max1 = $c_Goods->call_q("SELECT MAX(`no`) FROM `Fashion_collection_$this->gender`");
+              $c_goods = $c_Goods->call_all(['no' => $max1[0][0]], "{$this->getSort()}");
+              $s_Goods = new DB("Fashion_shoes_$this->gender");
+              $max2 = $s_Goods->call_q("SELECT MAX(`no`) FROM `Fashion_shoes_$this->gender`");
+              $s_goods = $s_Goods->call_all(['no' => $max2[0][0]], "{$this->getSort()}");
+              return $goods = array_merge($c_goods, $s_goods);
               break;
             case 'collection':
               $Goods = new DB("Fashion_collection_$this->gender");
@@ -301,9 +314,16 @@ class getMSC extends getUrl2
 
 
         case 'collection': //Collection
-          $Goods = new DB("Fashion_collection_$this->gender");
-          return $goods = $Goods->call_all(['category' => $this->ndSort], "{$this->getSort()}");
-          break;
+          switch ($this->ndSort) {
+            case 'all':
+              $Goods = new DB("Fashion_collection_$this->gender");
+              return $goods = $Goods->call_all('', "{$this->getSort()}");
+              break;
+            default:
+              $Goods = new DB("Fashion_collection_$this->gender");
+              return $goods = $Goods->call_all(['category' => $this->ndSort], "{$this->getSort()}");
+              break;
+          }
 
 
         case 'shoes': //Shoes
@@ -323,8 +343,11 @@ class getMSC extends getUrl2
         case 'specialPrices': //SpecialPrices
           switch ($this->ndSort) {
             case 'all':
-              $Goods = new DB("Fashion_collection_$this->gender");
-              return $goods = $Goods->call_q("SELECT * FROM `Fashion_collection_$this->gender` WHERE `sale` != 0 {$this->getSort()}");
+              $cGoods = new DB("Fashion_collection_$this->gender");
+              $sGoods = new DB("Fashion_shoes_$this->gender");
+              $c_goods = $cGoods->call_q("SELECT * FROM `Fashion_collection_$this->gender` WHERE `sale` != 0 {$this->getSort()}");
+              $s_goods = $sGoods->call_q("SELECT * FROM `Fashion_shoes_$this->gender` WHERE `sale` != 0 {$this->getSort()}");
+              return $goods = array_merge($c_goods, $s_goods);
               break;
             case 'shirt/polo/T-shirt':
               $Goods = new DB("Fashion_collection_$this->gender");

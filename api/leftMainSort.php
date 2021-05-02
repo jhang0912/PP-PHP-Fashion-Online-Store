@@ -4,12 +4,10 @@ include_once "../toolKit.php";
 $newIn =
   [
     'men' => [
-      'This Week',
       'collection',
       'shoes'
     ],
     'women' => [
-      'This Week',
       'collection',
       'shoes'
     ],
@@ -58,13 +56,11 @@ $shoes =
 $specialPrices =
   [
     'men' => [
-      'all',
       'shirt/polo/T-shirt',
       'jacket/blazer',
       'shoes'
     ],
     'women' => [
-      'all',
       'shirt/T-shirt',
       'jacket/blazer',
       'shoes'

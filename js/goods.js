@@ -1,13 +1,12 @@
 
 /* 顯示商品 */
 let text = '';
-console.log(mainSortClicked)
 $.get('./api/goods.php', { text, mainSortClicked, ndSortClicked, genderClicked }, function (res) {
   $('.goodsShow').html(res);
   $('.goodsCounts').text('all ' + $('.goods-card').length);
 })
 
-/*  */
+/* 顯示商品數量 */
 $.get('./api/leftMainSort.php', { mainSortClicked, genderClicked }, function (res) {
   $('#left_'+mainSortClicked).append(res)
   
@@ -21,6 +20,7 @@ $('.uk-nav>li>a').on('click', function () {
     $('.goodsCounts').text('all ' + $('.goods-card').length);
   })
 })
+
 
 
 

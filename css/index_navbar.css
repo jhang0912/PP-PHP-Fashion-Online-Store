@@ -56,6 +56,10 @@ body
   overflow-x:hidden;
   overflow-y:auto;
 }
+#Navbar .rwdBar-gender
+{
+  cursor: pointer;
+}
 #Navbar .rwdBar-gender.men
 {
   border: 1px solid black;
