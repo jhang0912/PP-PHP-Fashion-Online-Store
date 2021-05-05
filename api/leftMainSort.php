@@ -83,7 +83,7 @@ foreach (${$_GET['mainSortClicked']}[$_GET['genderClicked']] as $key => $value) 
   ${$value} = new getUrl2($_GET['mainSortClicked'], $value);
 ?>
   <div class="text-start m-3">
-    <a class="leftNdSort text-decoration-none <?= ($_GET['mainSortClicked'] == 'specialPrices') ? 'text-danger' : ''; ?> h6" href="?page=<?= $_GET['genderClicked'] ?><?= ${$value}->getNdUrl() ?>"><?= $value ?></a>
+    <div class="leftNdSort text-decoration-none <?= ($_GET['mainSortClicked'] == 'specialPrices') ? 'text-danger' : ''; ?> h6" name="<?=$value?>"><?= $value ?></div>
   </div>
 <?php
 }

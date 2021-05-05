@@ -1,6 +1,6 @@
 <div class="container-fluid d-flex justify-content-between align-items-center p-4">
   <div class="goodsCounts h4 m-0">all</div>
-  <div class="goodsBreadcrumb d-none d-sm-block h4 m-0"><?= $_GET['page'] ?>'s <?= $_GET['mainSort'] ?></div>
+  <div class="goodsBreadcrumb d-none d-sm-block h4 m-0"><?= $_GET['page'] ?>／<?= $_GET['mainSort'] ?></div>
   <div class="goodsSort">
     <button class="uk-button uk-button-default border border-dark" type="button">Sort</button>
     <div uk-dropdown="pos: bottom-justify">
