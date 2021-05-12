@@ -138,7 +138,7 @@ class DB
       foreach ($arr as $key => $value) {
         $tmp[] = sprintf("`%s`='%s'", $key, $value);
       }
-      $sql = "update $this->table set" . implode(",", $tmp) . " where `id`='{$arr['id']}'";
+      $sql = "UPDATE $this->table SET" . implode(",", $tmp) . " where `id`='{$arr['id']}'";
     } else {
       $sql = "insert into $this->table  (`" . implode("`,`", array_keys($arr)) . "`) values('" . implode("','", $arr) . "')";
     }
@@ -262,11 +262,8 @@ class getMSC extends getUrl2
     if ($this->ndSort == '' || $this->ndSort == null) {
       switch ($this->mainSort) {
         case 'newIn':
-          $c_Goods = new DB("Fashion_collection_$this->gender");
-          $max1 = $c_Goods->call_q("SELECT MAX(`no`) FROM `Fashion_collection_$this->gender`");
-          $s_Goods = new DB("Fashion_shoes_$this->gender");
-          $max2 = $s_Goods->call_q("SELECT MAX(`no`) FROM `Fashion_shoes_$this->gender`");
-          return  $goods = $c_Goods->call_q("SELECT * FROM `Fashion_collection_$this->gender` WHERE `no` = {$max1[0][0]} UNION SELECT * FROM `Fashion_shoes_$this->gender` WHERE `no` = {$max2[0][0]} {$this->getSort()}");
+          $Goods = new DB("Fashion_collection_$this->gender");
+          return  $goods = $Goods->call_q("SELECT * FROM `Fashion_collection_$this->gender` WHERE `no` = (SELECT MAX(`no`) FROM `Fashion_collection_$this->gender` ) UNION SELECT * FROM `Fashion_shoes_$this->gender` WHERE `no` = (SELECT MAX(`no`) FROM `Fashion_shoes_$this->gender` ) {$this->getSort()}");
           break;
         case 'specialPrices':
           $Goods = new DB("Fashion_collection_$this->gender");
@@ -286,21 +283,16 @@ class getMSC extends getUrl2
         case 'newIn': //NewIn
           switch ($this->ndSort) {
             case 'all':
-              $c_Goods = new DB("Fashion_collection_$this->gender");
-              $max1 = $c_Goods->call_q("SELECT MAX(`no`) FROM `Fashion_collection_$this->gender`");
-              $s_Goods = new DB("Fashion_shoes_$this->gender");
-              $max2 = $s_Goods->call_q("SELECT MAX(`no`) FROM `Fashion_shoes_$this->gender`");
-              return  $goods = $c_Goods->call_q("SELECT * FROM `Fashion_collection_$this->gender` WHERE `no` = {$max1[0][0]} UNION SELECT * FROM `Fashion_shoes_$this->gender` WHERE `no` = {$max2[0][0]} {$this->getSort()}");
+              $Goods = new DB("Fashion_collection_$this->gender");
+              return  $goods = $Goods->call_q("SELECT * FROM `Fashion_collection_$this->gender` WHERE `no` = (SELECT MAX(`no`) FROM `Fashion_collection_$this->gender` ) UNION SELECT * FROM `Fashion_shoes_$this->gender` WHERE `no` = (SELECT MAX(`no`) FROM `Fashion_shoes_$this->gender` ) {$this->getSort()}");
               break;
             case 'collection':
               $Goods = new DB("Fashion_collection_$this->gender");
-              $max = $Goods->call_q("SELECT MAX(`no`) FROM `Fashion_collection_$this->gender`");
-              return $goods = $Goods->call_all(['no' => $max[0][0]], "{$this->getSort()}");
+              return $goods = $Goods->call_q("SELECT * FROM `Fashion_collection_$this->gender` WHERE `no` = (SELECT MAX(`no`) FROM `Fashion_collection_$this->gender` )");
               break;
             case 'shoes':
               $Goods = new DB("Fashion_shoes_$this->gender");
-              $max = $Goods->call_q("SELECT MAX(`no`) FROM `Fashion_shoes_$this->gender`");
-              return $goods = $Goods->call_all(['no' => $max[0][0]], "{$this->getSort()}");
+              return $goods = $Goods->call_q("SELECT * FROM `Fashion_shoes_$this->gender` WHERE `no` = (SELECT MAX(`no`) FROM `Fashion_shoes_$this->gender` )");
               break;
           }
           break;
