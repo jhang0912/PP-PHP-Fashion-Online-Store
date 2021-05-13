@@ -71,31 +71,31 @@ include_once "../toolKit.php";
 </div>
 
 <div class="themeCon bg-light mb-5 p-3">
-  <div class="title h2 text-center">Theme Activities</div>
+  <div class=" h2 text-center">Theme Activities</div>
   <?php include "api/theme.php" ?>
 </div>
 
 <div class="forInspirationCon uk-container uk-container-large bg-light shadow mb-5 p-3">
-  <div class="title container-fluid h2 text-center">For Inspiration</div>
+  <div class=" container-fluid h2 text-center">For Inspiration</div>
   <?php include "api/forInspiration.php" ?>
 </div>
 
 <div class="collectionCon bg-light mb-5 p-3">
-  <div class="title container-fluid h2 text-center">Collection</div>
+  <div class=" container-fluid h2 text-center">Collection</div>
   <?php include "api/collection.php" ?>
 </div>
 
 <div class="itemsRankingCon uk-container uk-container-large bg-light shadow mb-5 p-3">
-  <div class="title container-fluid h2 text-center">Items Ranking</div>
+  <div class=" container-fluid h2 text-center">Items Ranking</div>
   <?php include "api/itemsRanking.php" ?>
 </div>
 
 <div class="shoesCon bg-light mb-5 p-3">
-  <div class="title container-fluid h2 text-center">Shoes</div>
+  <div class=" container-fluid h2 text-center">Shoes</div>
   <?php include "api/shoes.php" ?>
 </div>
 
 <div class="specialPricesCon uk-container uk-container-large bg-light shadow mb-5 p-3">
-  <div class="title container-fluid h2 text-center text-danger">special Prices</div>
+  <div class=" container-fluid h2 text-center text-danger">special Prices</div>
   <?php include "api/specialPrices-card.php" ?>
 </div>
