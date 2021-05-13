@@ -75,7 +75,11 @@ $('.mainSort').on('mouseover', function () {
 
 $("html").mousemove(function (e) {
   mouseY = e.pageY;
-  if ((mouseY > 594.5 || mouseY < 79)) {
+  let navbarH = $('.navbar').outerHeight();
+  let sortH = $('.sort').outerHeight();
+  let ndSortH = $('.ndSort').outerHeight();
+
+  if ((mouseY > (navbarH + sortH + ndSortH) || mouseY < navbarH)) {
     $('.ndSort').hide();
   }
 })

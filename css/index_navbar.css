@@ -135,6 +135,18 @@ button.accordion-button
     margin-top: 1rem;
   } 
 }
+@media (min-height: 578px) and (max-height: 880px) {
+  #Navbar .ndSort
+  {
+    height: 65vh;
+  }
+}
+@media (min-height: 0px) and (max-height: 577px) {
+  #Navbar .ndSort
+  {
+    height: 70vh;
+  }
+}
 
 /* animation */
 @keyframes bottomLine {
