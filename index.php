@@ -6,8 +6,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- jQ -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- icon -->
   <link rel="shortcut icon" href="icon/favicon.png" type="image/x-icon">
   <!-- UIkit CSS -->
@@ -57,11 +55,12 @@
 
   <section id="javaScript">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.19/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.19/dist/js/uikit-icons.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
     <script src="js/navbar.js"></script>
     <script src="js/slick.js"></script>
     <script src="js/newInShow.js"></script>

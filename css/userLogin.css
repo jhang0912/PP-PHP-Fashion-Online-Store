@@ -1,6 +1,6 @@
 #Content .signin_register
 {
-  height: calc(100vh - 126px);
+  min-height: calc(100vh - 126px);
 }
 #Content .sign_up-con
 {
@@ -12,12 +12,7 @@
   width: 30vw;
   min-width: 300px;
 }
-#Content .sign_in_text
-{
-  font-family:'Kanit', sans-serif ;
-  font-size: 14px;
-}
-#Content .sign_up_text
+#Content .sign_in_text,.sign_up_text,.pass-rule
 {
   font-family:'Kanit', sans-serif ;
   font-size: 14px;
@@ -26,4 +21,14 @@
 {
   font-family:'Kanit', sans-serif ;
   background-color: rgb(25, 25, 25);
+}
+input
+{
+  font-family:'Kanit', sans-serif ;
+}
+#title-error,#name-error,#phone-error,#email_register-error,#password_register-error
+{
+  font-family:'Kanit', sans-serif ;
+  font-size: 14px;
+  color: #dc3545;
 }
