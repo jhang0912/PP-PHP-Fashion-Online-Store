@@ -238,5 +238,5 @@ $section = [
   </div>
 </div>
 
-<div class="ndSort col-12">
+<div class="ndSort shadow-sm col-12">
 </div>

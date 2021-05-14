@@ -16,7 +16,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- google font -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Kanit:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Kanit:wght@400&display=swap" rel="stylesheet">
   <!-- fontawesome -->
   <script src="https://kit.fontawesome.com/518f89d214.js" crossorigin="anonymous"></script>
   <!-- slick -->
@@ -37,6 +37,7 @@
   <link rel="stylesheet" href="css/home_specialPrices.css">
   <link rel="stylesheet" href="css/index_footer.css">
   <link rel="stylesheet" href="css/goods.css">
+  <link rel="stylesheet" href="css/userLogin.css">
   <!-- title -->
   <title>Fashion Online Store</title>
 </head>
@@ -60,6 +61,7 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.19/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.19/dist/js/uikit-icons.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
     <script src="js/navbar.js"></script>
     <script src="js/slick.js"></script>
     <script src="js/newInShow.js"></script>
@@ -67,6 +69,7 @@
     <script src="js/collection.js"></script>
     <script src="js/footer.js"></script>
     <script src="js/goods.js"></script>
+    <script src="js/formCheck.js"></script>
   </section>
 </body>
 
