@@ -11,28 +11,35 @@ $('#register').validate({
       required: true,
       pattern: "^09[0-9]{8}$"
     },
-    email_register: {
+    email: {
       required: true,
       email: true,
     },
-    password_register: {
+    password: {
       required: true,
-      pattern: "^[A-Za-z0-9]{8,16}$",
+      pattern: "[A-Za-z0-9]+",
+      minlength: 8,
+      maxlength: 16
     },
   },
   messages: {//錯誤訊息
-    name: "Please complete this field",
+    name: {
+      required: "Please complete this field",
+      pattern: "Please check your name is correct"
+    },
     phone: {
       required: "Please complete this field",
       pattern: "Please check your phone number is correct"
     },
-    email_register: {
+    email: {
       required: "Please complete this field",
       email: "Please check your email is correct",
     },
-    password_register: {
+    password: {
       required: "Please complete this field",
-      pattern: "Please use a stronger password. It might be helpful to think of a memorable word or phrase."
+      pattern: "Please check your phone number is correct",
+      minlength: "Your password must be 8 - 16 characters",
+      maxlength: "Your password must be 8 - 16 characters",
     }
   }
 })

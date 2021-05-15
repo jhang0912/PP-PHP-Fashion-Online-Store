@@ -9,6 +9,7 @@ $wSlick = new DB('Fashion_slick_women');
 $NEWIN = new DB('Fashion_new_in');
 $mCollection = new DB('Fashion_collection_men');
 $wCollection = new DB('Fashion_collection_women');
+$Member = new DB('Fashion_member');
 class DB
 {
 
@@ -198,7 +199,7 @@ class getUrl
 
   public function __construct($mainSort)
   {
-    $this->gender = (!empty($_GET['page']) && $_GET['page'] != 'home') ? $_GET['page'] : 'men';
+    $this->gender = (empty($_GET['page']) || $_GET['page'] != 'women') ? 'men' : 'women';
     $this->mainSort = $mainSort;
   }
 
@@ -437,6 +438,69 @@ class getHTML
   }
 }
 
+/* 處理用戶註冊輸入的資料 */
+class check_registe_data
+{
+  private $register;
+  private $email;
+
+  public function __construct($register, $email)
+  {
+    $this->register = $register;
+    $this->email = $email;
+  }
+
+  public function call_filter()
+  {
+    return $this->filter($this->register);
+  }
+
+  public function call_check_email()
+  {
+    return $this->check_email($this->email);
+  }
+
+  private function filter($data)
+  {
+    if (is_array($data)) {
+      foreach ($data as $key => $value) {
+        if (!empty($value)) {
+          $data[$key] = trim($value); //去除多餘的空格、換行符號
+          $data[$key] = stripslashes($value); //去除「\」
+          $data[$key] = htmlspecialchars($value); //轉換特殊符號為html實體
+          return $data;
+        } else {
+          return false;
+        }
+      }
+    } else {
+      if (!empty($data)) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+      } else {
+        return false;
+      }
+    }
+  }
+
+  private function check_email($data) //檢查電子信箱是否重覆註冊
+  {
+    if (!empty($data) && filter_var($data, FILTER_SANITIZE_EMAIL)) {
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+      //建立連線
+      $Member = new DB('Fashion_member');
+      $member = $Member->call_count(['email' => $data]);
+      //檢查是否已存在同樣email的會員
+      return $result = (!empty($member)) ? false : true;
+    } else {
+      return false;
+    }
+  }
+}
 /* 產生性別+主分類的字串 */
 $genderN = ($_GET['page'] == 'women') ? 'womenNewIn' : 'menNewIn';
 $genderC = ($_GET['page'] == 'women') ? 'womenCollection' : 'menCollection';
