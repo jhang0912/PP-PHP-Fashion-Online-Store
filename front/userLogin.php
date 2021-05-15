@@ -2,7 +2,7 @@
   <div class="login-con border bg-light shadow m-2 p-4">
     <div class="sign_in container text-start h5 m-0 p-3">Sign In</div>
     <div class="sign_in_text container text-start p-3">Please enter your email and password below to access your account</div>
-    <form action="./api/" method="post">
+    <form id="signIn" action="./api/" method="post">
       <div class="form_con container-fluid d-flex flex-wrap justify-content-center align-item-center p-3">
         <div class="Email container mb-4 p-0">
           <label for="signIn_email" class="h6 m-0">Email</label>
@@ -11,7 +11,7 @@
 
         <div class="password container mb-4 p-0">
           <label for="signIn_password" class="h6 m-0">Password</label>
-          <input type="signIn_password" name="pass" class="form-control border-secondary rounded-0" id="signIn_password" required>
+          <input type="password" name="signIn_password" class="form-control border-secondary rounded-0" id="signIn_password" required>
         </div>
 
         <div class="submit container mt-4 p-0">
@@ -23,6 +23,7 @@
 
 
   <div class="sign_up-con border bg-light shadow m-2 p-4">
+    <div id="unsuccessful" class="text-center text-danger">Register unsuccessful</div>
     <div class="sign_up container text-start h5 m-0 p-3">REGISTER</div>
     <div class="sign_up_text container text-start p-3">Please register below to create an account</div>
     <form id="register" action="./api/register.php" method="post">

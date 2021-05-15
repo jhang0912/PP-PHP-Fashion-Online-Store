@@ -69,6 +69,7 @@
     <script src="js/footer.js"></script>
     <script src="js/goods.js"></script>
     <script src="js/formCheck.js"></script>
+    <script src="js/register.js"></script>
   </section>
 </body>
 

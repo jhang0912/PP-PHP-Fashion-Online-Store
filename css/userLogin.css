@@ -12,7 +12,11 @@
   width: 30vw;
   min-width: 300px;
 }
-#Content .sign_in_text,.sign_up_text,.rule
+#Content #unsuccessful
+{
+  display: none;
+}
+#Content #unsuccessful,.sign_in_text,.sign_up_text,.rule
 {
   font-family:'Kanit', sans-serif ;
   font-size: 14px;
@@ -26,7 +30,7 @@ input
 {
   font-family:'Kanit', sans-serif ;
 }
-#title-error,#name-error,#phone-error,#email-error,#password-error
+#signIn_email-error,#signIn_password-error,#title-error,#name-error,#phone-error,#email-error,#password-error
 {
   font-family:'Kanit', sans-serif ;
   font-size: 14px;
