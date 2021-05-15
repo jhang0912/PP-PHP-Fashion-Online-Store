@@ -13,8 +13,12 @@ $(document).ready(function () {
         if (res == true) {
           $.post('./api/register.php', { title, name, phone, email, password }, function (res2) {
             if (res2 !== false) {
-              alert('註冊成功');
-              location.href="http://220.128.133.15/s1090408/portfolio/fashionOnlineStore/";
+              for (let index = 3; index < 7; index++) {//清空表單資料
+                $('input').eq(index).val('');
+              }
+              let targetH = $('#Content').offset().top;
+              $(window).scrollTop(targetH);
+              $('.successful').fadeIn(500);
             } else {//顯示註冊失敗
               $('#unsuccessful').show();
             }
@@ -28,4 +32,10 @@ $(document).ready(function () {
       })
     }
   });
+
 });
+
+
+$('.successful-btn').on('click', function () {
+  $('.successful').fadeOut(500)
+})

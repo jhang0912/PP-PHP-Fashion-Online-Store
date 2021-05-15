@@ -65,7 +65,6 @@
     <script src="js/slick.js"></script>
     <script src="js/newInShow.js"></script>
     <script src="js/forInspiration.js"></script>
-    <script src="js/collection.js"></script>
     <script src="js/footer.js"></script>
     <script src="js/goods.js"></script>
     <script src="js/formCheck.js"></script>
