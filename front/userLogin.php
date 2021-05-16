@@ -22,7 +22,7 @@
 
   <div class="sign_up-con border bg-light shadow m-2 p-4">
     <div class="unsuccessful text-center text-danger">Register unsuccessful</div>
-    <div class="unsuccessful text-center text-danger">This email already exists</div>
+    <div class="unsuccessful text-center text-danger">Please complete all fields.</div>
     <div class="sign_up container text-start h5 m-0 p-3">REGISTER</div>
     <div class="sign_up_text container text-start p-3">Please register below to create an account</div>
     <form id="register" action="./api/" method="post">
@@ -36,23 +36,28 @@
         </div>
 
         <div class="name container mb-4 p-0">
-          <label for="name" class="h6 m-0">Name&ensp;<span class="rule">(letters and chinese)</span></label>
-          <input type="text" name="name" class="form-control border-secondary rounded-0" id="name" required>
+          <label for="name" class="h6 m-0">Name&ensp;<span class="rule">(chinese)</span></label>
+          <input type="text" name="name" class="form-control border-secondary rounded-0" id="name">
+          <div id="name-error" class="unsuccessful"></div>
         </div>
 
         <div class="phone container mb-4 p-0">
           <label for="phone" class="h6 m-0">Phone&ensp;<span class="rule">(numbers)</span></label>
-          <input type="text" name="phone" class="form-control border-secondary rounded-0" id="phone" required>
+          <input type="text" name="phone" class="form-control border-secondary rounded-0" id="phone">
+          <div id="phone-error" class="unsuccessful"></div>
         </div>
 
         <div class="Email container mb-4 p-0">
           <label for="email" class="h6 m-0">Email</label>
-          <input type="text" name="email" class="form-control border-secondary rounded-0" id="email" required>
+          <input type="text" name="email" class="form-control border-secondary rounded-0" id="email">
+          <div class="unsuccessful text-danger">This email already exists</div>
+          <div id="email-error" class="unsuccessful"></div>
         </div>
 
         <div class="password container mb-4 p-0">
           <label for="password" class="h6 m-0">Password&ensp;<span class="rule">(letters and numbers)</span></label>
-          <input type="password" name="password" class="form-control border-secondary rounded-0" id="password" required>
+          <input type="password" name="password" class="form-control border-secondary rounded-0" id="password">
+          <div id="password-error" class="unsuccessful"></div>
         </div>
         <div class="submit container mt-4 p-0">
           <input type="submit" class="sub_button w-50 btn btn-lg rounded-0 float-end text-light" value="Register">

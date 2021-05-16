@@ -35,6 +35,7 @@ input
   font-family:'Kanit', sans-serif ;
   font-size: 14px;
   color: #dc3545;
+  display: none;
 }
 #Content .successful
 {

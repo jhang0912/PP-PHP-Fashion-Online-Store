@@ -438,11 +438,10 @@ class getHTML
   }
 }
 
-/* 處理用戶註冊輸入的資料 */
 /* 處理用戶輸入的資料 */
 class check_registe_data
 {
-  private $register;
+  private $register; //陣列
   private $email;
 
   public function __construct($register, $email)
@@ -463,7 +462,12 @@ class check_registe_data
 
   public function call_check_pass()
   {
-    return $this->check_pass($this->data);
+    return $this->check_pass($this->register);
+  }
+
+  public function call_filter_register_form()
+  {
+    return $this->filter_register_form();
   }
 
   /* 過濾使用者輸入的資料 */
@@ -529,6 +533,36 @@ class check_registe_data
       //檢查信箱密碼是否正確
       return $result = (!empty($member)) ? true : false;
     }
+  }
+
+  /* 檢查註冊會員輸入的資料是否符合格式 */
+  private function filter_register_form()
+  {
+    $data_filter = [
+      '/^[\x{4e00}-\x{9fa5}]+$/u', //name
+      '/^09[0-9]{8}$/', //phone
+      '/^([\w\.\-]){1,64}\@([\w\.\-]){1,64}$/', //email
+      '/[A-Za-z0-9]{8,16}$/' //password
+    ];
+
+    $data_title = [
+      'name',
+      'phone',
+      'email',
+      'password'
+    ];
+
+    $data_status = '';
+
+    foreach ($this->register as $key => $value) {
+      if (preg_match($data_filter[$key], $value) == 1) {
+        $data_status = 1;
+      } else {
+        $data_status = $data_title[$key];
+        return $data_status;
+      }
+    }
+    return $data_status;
   }
 }
 /* 產生性別+主分類的字串 */
