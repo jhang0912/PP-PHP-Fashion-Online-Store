@@ -18,16 +18,14 @@ $(document).ready(function () {
               }
               let targetH = $('#Content').offset().top;
               $(window).scrollTop(targetH);
+              $('.unsuccessful').hide();
               $('.successful').fadeIn(500);
             } else {//顯示註冊失敗
-              $('#unsuccessful').show();
+              $('.unsuccessful').eq(0).show();
             }
           })
         } else {//顯示email已經存在的錯誤訊息
-          let error = `
-          <label id='email-error' class='error' for='email' >This email already exists</label>
-          `;
-          $('#email').after(error);
+          $('.unsuccessful').eq(1).show();
         }
       })
     }

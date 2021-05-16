@@ -439,6 +439,7 @@ class getHTML
 }
 
 /* 處理用戶註冊輸入的資料 */
+/* 處理用戶輸入的資料 */
 class check_registe_data
 {
   private $register;
@@ -460,6 +461,12 @@ class check_registe_data
     return $this->check_email($this->email);
   }
 
+  public function call_check_pass()
+  {
+    return $this->check_pass($this->data);
+  }
+
+  /* 過濾使用者輸入的資料 */
   private function filter($data)
   {
     if (is_array($data)) {
@@ -485,12 +492,14 @@ class check_registe_data
     }
   }
 
-  private function check_email($data) //檢查電子信箱是否重覆註冊
+  /* 檢查電子信箱是否重覆註冊 */
+  private function check_email($data)
   {
-    if (!empty($data) && filter_var($data, FILTER_SANITIZE_EMAIL)) {
+    if (!empty($data)) {
       $data = trim($data);
       $data = stripslashes($data);
       $data = htmlspecialchars($data);
+      $data = filter_var($data, FILTER_SANITIZE_EMAIL);
       //建立連線
       $Member = new DB('Fashion_member');
       $member = $Member->call_count(['email' => $data]);
@@ -498,6 +507,27 @@ class check_registe_data
       return $result = (!empty($member)) ? false : true;
     } else {
       return false;
+    }
+  }
+
+  /* 檢查密碼是否正確 */
+  private function check_pass($data)
+  {
+    if (!empty($this->data)) {
+      foreach ($this->$data as $key => $value) {
+        if (!empty($value)) {
+          $data[$key] = trim($value); //去除多餘的空格、換行符號
+          $data[$key] = stripslashes($value); //去除「\」
+          $data[$key] = htmlspecialchars($value); //轉換特殊符號為html實體
+        }
+      }
+      $email = $this->data[0];
+      $password = $this->data[1];
+      //建立連線
+      $Member = new DB('Fashion_member');
+      $member = $Member->call_count(['email' => $email, 'password' => $password]);
+      //檢查信箱密碼是否正確
+      return $result = (!empty($member)) ? true : false;
     }
   }
 }

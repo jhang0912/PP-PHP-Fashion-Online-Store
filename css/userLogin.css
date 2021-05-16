@@ -12,11 +12,11 @@
   width: 30vw;
   min-width: 300px;
 }
-#Content #unsuccessful
+#Content .unsuccessful
 {
   display: none;
 }
-#Content #unsuccessful,.sign_in_text,.sign_up_text,.rule
+#Content .unsuccessful,.sign_in_text,.sign_up_text,.rule
 {
   font-family:'Kanit', sans-serif ;
   font-size: 14px;

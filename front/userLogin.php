@@ -21,10 +21,11 @@
 
 
   <div class="sign_up-con border bg-light shadow m-2 p-4">
-    <div id="unsuccessful" class="text-center text-danger">Register unsuccessful</div>
+    <div class="unsuccessful text-center text-danger">Register unsuccessful</div>
+    <div class="unsuccessful text-center text-danger">This email already exists</div>
     <div class="sign_up container text-start h5 m-0 p-3">REGISTER</div>
     <div class="sign_up_text container text-start p-3">Please register below to create an account</div>
-    <form id="register" action="./api/register.php" method="post">
+    <form id="register" action="./api/" method="post">
       <div class="form_con container-fluid d-flex flex-wrap justify-content-center align-item-center p-3">
         <div class="Email container mb-4 p-0">
           <label for="title" class="h6 m-0">Title</label>
@@ -46,7 +47,7 @@
 
         <div class="Email container mb-4 p-0">
           <label for="email" class="h6 m-0">Email</label>
-          <input type="email" name="email" class="form-control border-secondary rounded-0" id="email" required>
+          <input type="text" name="email" class="form-control border-secondary rounded-0" id="email" required>
         </div>
 
         <div class="password container mb-4 p-0">

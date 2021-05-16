@@ -55,8 +55,6 @@
 
   <section id="javaScript">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.19/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.19/dist/js/uikit-icons.min.js"></script>
@@ -67,8 +65,8 @@
     <script src="js/forInspiration.js"></script>
     <script src="js/footer.js"></script>
     <script src="js/goods.js"></script>
-    <script src="js/formCheck.js"></script>
     <script src="js/register.js"></script>
+    <script src="js/signIn.js"></script>
   </section>
 </body>
 
